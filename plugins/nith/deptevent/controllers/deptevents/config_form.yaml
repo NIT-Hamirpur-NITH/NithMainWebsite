@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Dept Event
+
+# Model Form Field configuration
+form: $/nith/deptevent/models/deptevent/fields.yaml
+
+# Model Class name
+modelClass: NITH\DeptEvent\Models\DeptEvent
+
+# Default redirect location
+defaultRedirect: nith/deptevent/deptevents
+
+# Create page
+create:
+    title: Create Dept Event
+    redirect: nith/deptevent/deptevents/update/:id
+    redirectClose: nith/deptevent/deptevents
+
+# Update page
+update:
+    title: Edit Dept Event
+    redirect: nith/deptevent/deptevents
+    redirectClose: nith/deptevent/deptevents
+
+# Preview page
+preview:
+    title: Preview Dept Event

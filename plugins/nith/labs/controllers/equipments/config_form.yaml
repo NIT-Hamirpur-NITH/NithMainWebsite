@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Equipment
+
+# Model Form Field configuration
+form: $/nith/labs/models/equipment/fields.yaml
+
+# Model Class name
+modelClass: NITH\Labs\Models\Equipment
+
+# Default redirect location
+defaultRedirect: nith/labs/equipments
+
+# Create page
+create:
+    title: Create Equipment
+    redirect: nith/labs/equipments/update/:id
+    redirectClose: nith/labs/equipments
+
+# Update page
+update:
+    title: Edit Equipment
+    redirect: nith/labs/equipments
+    redirectClose: nith/labs/equipments
+
+# Preview page
+preview:
+    title: Preview Equipment

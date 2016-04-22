@@ -1,0 +1,31 @@
+title = "Gallery"
+url = "/gallery"
+layout = "without-sidebar"
+is_hidden = 0
+==
+use Mohsin\Carousel\Models\Carousel;
+
+function onStart() {
+	$this['title'] = 'Gallery';
+	$this->addCss('assets/bower_components/lightgallery/dist/css/lightgallery.min.css');
+    $this->addJs('assets/bower_components/lightgallery/dist/js/lightgallery-all.min.js');
+	$this->addJs('assets/js/gallery.js');
+	$this['images'] = Carousel::where('name', 'like', 'Event Gallery')->first()->images()->paginate(8);
+}
+
+==
+
+<div class="col-md-12">
+	<div class="row lightphoto">
+		{% for image in images %}
+		<a class="col-md-3 col-sm-3 col-xs-6" title="{{ image.title }}" href="{{ image.path }}" data-sub-html="<h4>{{ image.title }}</h4><p>{{ image.description }}</p>">
+			<img class="img-responsive img-thumbnail" src="{{ image.getThumb(300, 'auto') }}" alt="" />
+		</a>
+		{% endfor %}
+	</div>
+	{{ images.render() | raw }}	
+</div>
+
+
+
+

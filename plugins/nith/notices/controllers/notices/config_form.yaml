@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Notice
+
+# Model Form Field configuration
+form: $/nith/notices/models/notice/fields.yaml
+
+# Model Class name
+modelClass: NITH\Notices\Models\Notice
+
+# Default redirect location
+defaultRedirect: nith/notices/notices
+
+# Create page
+create:
+    title: Create Notice
+    redirect: nith/notices/notices/update/:id
+    redirectClose: nith/notices/notices
+
+# Update page
+update:
+    title: Edit Notice
+    redirect: nith/notices/notices
+    redirectClose: nith/notices/notices
+
+# Preview page
+preview:
+    title: Preview Notice

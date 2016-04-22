@@ -1,0 +1,85 @@
+title = "Department Publications"
+url = "/dept/:perma/publications"
+layout = "department"
+description = "Publications of Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$faculties = $this['dept']->faculties;
+	$this['navtitle'] = 'Publications';
+	$this['active'] = 'publication';
+
+	$researches = [];
+	foreach ($faculties as $fac) {
+		foreach( $fac->researches as $research) {
+			$researches[$research->id] = $research->toArray();
+		}
+	}
+	$researches = collect($researches)->groupBy('year')->sortByDesc('year');
+	$this['researches'] = $researches;
+
+	$conferences = [];
+	foreach ($faculties as $fac) {
+		foreach( $fac->conferences as $conference) {
+			$conferences[$conference->id] = $conference->toArray();
+		}
+	}
+	$this['conferences'] = collect($conferences)->groupBy('year')->sortBy('year');
+	
+}
+
+==
+<h3> Research Papers </h3>
+{% for year, papers in researches %}
+<div class="row rpapers-row">
+	<div class="col-xs-12">
+		<button class="btn btn-block btn-theme btn-sm" data-toggle="collapse" data-target="#{{ year }}"> 
+			<i class="fa fa-calendar-o"></i>
+			{{ year }}	
+		</button>
+	</div>
+	<div class="col-xs-12">
+		<div id="{{ year }}" class="collapse">
+    		<ul class="rpapers list-unstyled">
+				{% for paper in papers %}
+				<li>
+					<h3> <i class="fa fa-star"></i> {{ paper.title }} </h3>
+					<p> <strong> By: </strong> &nbsp; {{ paper.by }} </p>
+					<p> <strong> Published in: </strong>  &nbsp; {{ paper.in }} </p>
+				</li>
+				{% endfor %}
+			</ul>
+    	</div>		
+	</div>
+</div>
+{% endfor %}
+
+
+<h3> Conferences </h3>
+{% for year, papers in conferences %}
+	<div class="row rpapers-row">
+		<div class="col-xs-12">
+			<button class="btn btn-block btn-theme btn-sm" data-toggle="collapse" data-target="#conf{{ year }}"> 
+				<i class="fa fa-calendar-o"></i>
+				{{ year }}	
+			</button>
+		</div>
+		<div class="col-xs-12">
+			<div id="conf{{ year }}" class="collapse">
+	    		<ul class="rpapers list-unstyled">
+					{% for paper in papers %}
+					<li>
+						<h3> <i class="fa fa-star"></i> {{ paper.title }} </h3>
+						<p> <strong> By: </strong> &nbsp; {{ paper.by }} </p>
+						<p> <strong> Published At: </strong>  &nbsp; {{ paper.in }} </p>
+					</li>
+					{% endfor %}
+				</ul>
+	    	</div>		
+		</div>
+	</div>
+	{% endfor %}
+</div>
+
+

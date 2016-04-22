@@ -1,0 +1,24 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: Title
+        searchable: true
+    updated_at:
+        label: Updated
+        type: datetime
+    archive:
+        label: Archived
+        type: switch
+    isnew:
+        label: New
+        type: switch
+    department:
+        label: Department
+        relation: department
+        select: name

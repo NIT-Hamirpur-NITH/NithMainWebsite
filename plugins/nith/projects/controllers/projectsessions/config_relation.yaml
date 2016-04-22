@@ -1,0 +1,14 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+projects:
+    label: Projects
+    manage:
+        form: $/nith/projects/models/project/fields.yaml
+        list: $/nith/projects/models/project/columns.yaml
+    view:
+        list: $/nith/projects/models/project/columns.yaml
+        toolbarButtons: delete|add
+        showSearch: true
+        showCheckboxes: true

@@ -1,0 +1,25 @@
+title = "All Notices"
+url = "/all-notices"
+layout = "with-sidebar"
+is_hidden = 0
+==
+
+function onStart() {
+    $this['title'] = 'All Notices';
+    $this->addCss('//cdn.datatables.net/1.10.7/css/jquery.dataTables.min.css');
+    $this->addJs('//cdn.datatables.net/1.10.7/js/jquery.dataTables.min.js');
+    $this->addJs('assets/js/notices.js');
+    $this->addCss('assets/css/notices.css');
+}
+
+==
+
+<table class="table table-striped" id="notices-table">
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th>Type</th>
+            <th>Added</th>
+        </tr>
+    </thead>
+</table>

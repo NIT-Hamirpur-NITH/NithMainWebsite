@@ -1,0 +1,20 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+      label: ID
+      disabled: true
+    title:
+      label: Title
+      required: true
+    by:
+      label: By
+      required: true
+    in:
+      label: Published At
+      required: true
+    year:
+      label: Year
+      required: true

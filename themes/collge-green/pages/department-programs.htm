@@ -1,0 +1,16 @@
+title = "Department Programs Offered"
+url = "/dept/:perma/programs"
+layout = "department"
+description = "Programs offered by Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['programs'] = $this['dept']->dept_detail->programs;
+	$this['navtitle'] = 'Programs Offered';
+	$this['active'] = 'programs';
+}
+
+==
+
+{{ programs | raw }}

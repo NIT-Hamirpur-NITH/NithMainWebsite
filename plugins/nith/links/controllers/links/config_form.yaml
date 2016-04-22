@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Link
+
+# Model Form Field configuration
+form: $/nith/links/models/link/fields.yaml
+
+# Model Class name
+modelClass: NITH\Links\Models\Link
+
+# Default redirect location
+defaultRedirect: nith/links/links
+
+# Create page
+create:
+    title: Create Link
+    redirect: nith/links/links/update/:id
+    redirectClose: nith/links/links
+
+# Update page
+update:
+    title: Edit Link
+    redirect: nith/links/links
+    redirectClose: nith/links/links
+
+# Preview page
+preview:
+    title: Preview Link

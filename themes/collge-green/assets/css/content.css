@@ -1,0 +1,16 @@
+body {
+    font-family: Lato, sans-serif;
+}
+
+.page-wrapper .page-heading h1.heading-title {
+    font-family: Patua One, serif;
+    color: #444;
+    display: block;
+}
+
+.page-wrapper .page-heading span {
+    font-size: 18px;
+    color: #777;
+    /*font-weight: 700;*/
+    font-family: Patua One, serif;
+}

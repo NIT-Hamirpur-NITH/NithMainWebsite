@@ -1,0 +1,40 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+      label: ID
+      disabled: true
+    name:
+      label: Name
+      required: true
+    at:
+      label: At
+      required: true
+    start_date:
+      label: Start Date
+      type: datepicker
+      mode: date
+      required: true
+      span: left
+      required: true
+    end_date:
+      label: End Date
+      type: datepicker
+      mode: date
+      span: right
+    attended_by:
+      label: Attended By
+      required: true
+    department:
+      label: Department
+      required: true
+      type: relation
+      nameFrom: name
+      span: left
+    type:
+      label: Type
+      required: true
+      type: dropdown
+

@@ -1,0 +1,14 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+students:
+    label: Students
+    manage:
+        form: $/nith/students/models/student/fields.yaml
+        list: $/nith/students/models/student/columns.yaml
+    view:
+        list: $/nith/students/models/student/columns.yaml
+        toolbarButtons: delete|add
+        showSearch: true
+        showCheckboxes: true

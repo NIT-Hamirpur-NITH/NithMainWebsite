@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Consultancy
+
+# Model Form Field configuration
+form: $/nith/consultancy/models/consultancy/fields.yaml
+
+# Model Class name
+modelClass: NITH\Consultancy\Models\Consultancy
+
+# Default redirect location
+defaultRedirect: nith/consultancy/consultancy
+
+# Create page
+create:
+    title: Create Consultancy
+    redirect: nith/consultancy/consultancy/update/:id
+    redirectClose: nith/consultancy/consultancy
+
+# Update page
+update:
+    title: Edit Consultancy
+    redirect: nith/consultancy/consultancy
+    redirectClose: nith/consultancy/consultancy
+
+# Preview page
+preview:
+    title: Preview Consultancy

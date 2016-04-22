@@ -1,0 +1,42 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+      # tab: Basic
+      id:
+        label: ID
+        disabled: true
+        tab: Basic
+      department:
+        label: Depratment
+        type: relation
+        nameFrom: name
+        required: true
+        span: left
+        tab: Basic
+      year:
+        label: Year
+        required: true
+        span: right
+        tab: Basic
+      program:
+        label: Program
+        type: radio
+        options:
+          0: B.Tech.
+          1: M.Tech.
+        tab: Basic
+      # tab: About
+      about:
+        label: About
+        type: richeditor
+        size: huge
+        tab: About
+      # tab: Projects
+      projects:
+        label: Projects
+        type: partial
+        path: field_projects
+        tab: Project

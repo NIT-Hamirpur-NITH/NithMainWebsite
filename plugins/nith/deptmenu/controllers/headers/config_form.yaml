@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Header
+
+# Model Form Field configuration
+form: $/nith/deptmenu/models/header/fields.yaml
+
+# Model Class name
+modelClass: NITH\DeptMenu\Models\Header
+
+# Default redirect location
+defaultRedirect: nith/deptmenu/headers
+
+# Create page
+create:
+    title: Create Header
+    redirect: nith/deptmenu/headers/update/:id
+    redirectClose: nith/deptmenu/headers
+
+# Update page
+update:
+    title: Edit Header
+    redirect: nith/deptmenu/headers
+    redirectClose: nith/deptmenu/headers
+
+# Preview page
+preview:
+    title: Preview Header

@@ -1,0 +1,30 @@
+.director {
+	margin-top: 30px;
+	margin-bottom: 130px;
+}
+
+.director .message p {
+	font-family: Lato, Arial, sans-serif;
+	font-size: 17px;
+	/*font-weight: 700;*/
+	color: #555;
+}
+
+.director .regards {
+	margin-top: 10px;
+}
+
+.director .regards p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+.director .regards p.salute {
+	font-size: 18px;
+	font-family: Lato, Arial, sans-serif
+}
+
+.director .regards p.name {
+	font-family: Patua One, Times New Roman, serif;
+	font-size: 18px;
+}

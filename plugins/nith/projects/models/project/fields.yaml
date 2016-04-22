@@ -1,0 +1,44 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+      # tab: Basic
+      id:
+        label: ID
+        disabled: true
+        tab: Basic
+      title:
+        label: Title
+        required: true
+        tab: Basic
+      faculty:
+        label: Mentor
+        type: recordfinder
+        list: $/nith/faculties/models/faculty/columns.yaml
+        prompt: Click the %s button to find a mentor
+        nameFrom: profile
+        tab: Basic
+      project_session:
+        label: Session
+        type: recordfinder
+        list: $/nith/projects/models/projectsession/columns.yaml
+        prompt: Click the %s button to find the session
+        required: true
+        nameFrom: year
+        descriptionFrom: department
+        tab: Basic
+      report:
+        type: fileupload
+        mode: file
+        label: Report
+        tab: Basic
+      # tab: Students
+      students:
+        label: Students
+        type: partial
+        path: field_students
+        required: true
+        tab: Students
+

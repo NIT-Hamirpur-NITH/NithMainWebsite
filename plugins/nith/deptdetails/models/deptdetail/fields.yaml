@@ -1,0 +1,42 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+      address:
+        label: Address
+        required: true
+        tab: Basic
+      phone:
+        label: Phone
+        required: true
+        tab: Basic
+      email:
+        label: Email
+        required: true
+        tab: Basic
+      about:
+        label: About
+        required: true
+        type: richeditor
+        size: huge
+        tab: About
+      programs:
+        label: Programs Offered
+        required: true
+        type: richeditor
+        size: huge
+        tab: Programs
+      courses:
+        label: Courses Offered
+        required: true
+        type: richeditor
+        size: huge
+        tab: Courses
+      current_session:
+        label: Current Session
+        required: true
+        type: richeditor
+        size: huge
+        tab: Current

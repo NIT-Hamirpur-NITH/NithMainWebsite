@@ -1,0 +1,35 @@
+title = "Single Gallery for Department"
+url = "/dept/:perma/gallery/:id"
+layout = "department"
+description = "For content of a single gallery of department"
+is_hidden = 0
+==
+
+function onStart() {
+    $id = $this->param('id');
+    $gallery = $this['dept']->galleries()->find($id);
+   
+
+    if (!$gallery) {
+        return Redirect::to('/404');
+    }
+
+    $this['navtitle'] = $gallery->carousel->name;
+    $this['gallery'] = $gallery;
+    $this->addCss('assets/bower_components/lightgallery/dist/css/lightgallery.min.css');
+    $this->addJs('assets/bower_components/lightgallery/dist/js/lightgallery-all.min.js');
+    $this->addJs('assets/js/gallery.js');
+}
+
+==
+
+<div class="col-md-12">
+    <div class="row lightphoto">
+        {% for image in gallery.carousel.images %}
+        <a class="col-md-3 col-sm-3 col-xs-6" title="{{ image.title }}" href="{{ image.path }}"  data-sub-html="<h4>{{ image.title }}</h4><p>{{ image.description }}</p>" >
+            <img class="img-responsive img-thumbnail" src="{{ image.getThumb(300, 'auto') }}" alt="" />
+        </a>
+        {% endfor %}
+    </div>
+    {{ images.render() | raw }} 
+</div>

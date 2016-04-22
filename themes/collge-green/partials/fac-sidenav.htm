@@ -1,0 +1,88 @@
+description = "Faculty profile sidebar navigation"
+[viewBag]
+==
+==
+<div class="profile">
+  <div class="intro row">
+    <div class="col-md-8 col-md-offset-2 col-sm-4">
+      <img src="{{ fac.profile.profile_image.path }}" class="img-responsive img-circle" alt=""> 
+    </div>
+    <div class="col-md-2 col-sm-hidden"></div>
+    <div class="col-md-12 col-sm-8 details">
+      <p class="designation"> {{ fac.designation }} </p>
+      <p class="dept">  {{ fac.department.name }} </p>
+      <div class="contact text-right">
+      </div>
+    </div>
+  </div>
+
+  <div class="sidebar-nav">
+    <div class="navbar" role="navigation">
+      <div class="navbar-header">
+        <button type="button" style="color: black" class="btn-link navbar-toggle visible-xs" data-toggle="collapse" data-target=".sidebar-navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-bar"></i>
+          <i class="fa fa-bar"></i>
+          <i class="fa fa-bar"></i>
+          <span class="visible-xs navbar-brand">Menu</span>  
+        </button>
+      </div>
+      <div class="navbar-collapse collapse sidebar-navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><button style="text-align: left; padding-top: 10px; padding-bottom: 10px;" type="button" class="btn btn-success btn-block" data-toggle="modal" data-target="#contact">
+            <i  style="color: white" class="fa fa-send"></i>
+            Contact
+          </button></li>
+          <li>
+            {% if fac.resume %}
+              <a href="fac.resume.getPath()" style="padding: 0px">
+                <button class="btn btn-primary btn-block" style="text-align: left; padding-top: 10px; padding-bottom: 10px;"> 
+                <i  style="color: white" class="fa fa-file-pdf-o"></i>
+                Resume 
+                </button>
+              </a> 
+            {% endif %}
+          </li>
+          <li class="{{ (active == 'about') ? 'active' : '' }}"><a href="/fac/{{ fac.id }}/"> About </a></li>
+          <li class="{{ (active == 'research') ? 'active' : '' }}"><a href="/fac/{{ fac.id }}/research"> Research </a></li>
+          <li class="{{ (active == 'conference') ? 'active' : '' }}"><a href="/fac/{{ fac.id }}/conference"> Conferences </a></li>
+          <li class="{{ (active == 'awards') ? 'active' : '' }}"><a href="/fac/{{ fac.id }}/awards"> Awards &amp; Honors </a></li>
+          {% for menu in fac.menus %}
+            <li class="{{ (active == menu.permalink) ? 'active' : '' }}">
+              <a href="/fac/{{ fac.id }}/perma/{{ menu.permalink }}"> {{ menu.title }} </a>
+            </li>
+          {% endfor %}
+        </ul>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+
+</div>
+
+<!-- CONTACT MODAL -->
+<div class="modal fade" id="contact" tabindex="-1" role="dialog" aria-labelledby="contactlabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="contactlabel"> Contact : <small> {{ fac.profile.name }} </h4>
+      </div>
+      <div class="modal-body">
+        <p class="contact"><i class="fa fa-phone fa-fw text-muted"></i>
+          {% if fac.profile.phone_office %} <i>Office:</i> {{ fac.profile.phone_office }} {% endif %}
+          {% if fac.profile.phone_residence %} | <i>Residence:</i> {{ fac.profile.phone_residence }} {% endif %}
+        </p>
+        {% if fac.profile.fax %}
+          <p class="contact"><i class="fa fa-fax fa-fw text-muted"></i> {{ fac.profile.fax }} </p>
+        {% endif %}
+        {% if fac.profile.email %}
+          <p class="contact"><i class="fa fa-envelope-o fa-fw text-muted"></i> {{ fac.profile.email }} </p>
+        {% endif %}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- //CONTACT MODAL -->

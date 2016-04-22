@@ -1,0 +1,11 @@
+title = "All Notices Ajax"
+url = "/all-notices/ajax"
+is_hidden = 0
+==
+use NITH\Notices\Models\Notice;
+
+function onStart() {
+    return Datatables::of(Notice::query())->make(true);
+}
+
+==

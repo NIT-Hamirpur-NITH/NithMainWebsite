@@ -1,0 +1,47 @@
+title = "Notice"
+url = "/notice/:id"
+layout = "with-sidebar"
+description = "For delivering the content of a notice based on ID"
+is_hidden = 0
+==
+
+use NITH\Notices\Models\Notice;
+
+function onStart() {
+    $id = $this->param('id');
+    $notice = Notice::find($id);
+
+    if (!$notice) {
+        return Redirect::to('/404');
+    }
+
+    if ($notice->doc) {
+        return Redirect::to($notice->doc->getPath());
+    } else if ($notice->link) {
+
+        if ($notice->link[0] == '/') {
+            return Redirect::to($notice->link);
+        }
+
+        $url = parse_url($notice->link);
+        if (!isset($url['scheme'])) {
+            return Redirect::to('//'.$notice->link);
+        }
+
+        return Redirect::to($notice->link);
+
+    } else {
+        $this['title'] = 'Notice';
+        $this['subtitle'] = $notice->title;
+        $this['content'] = $notice->content ? $notice->content : 'Nothing To See Here';
+        $this->addCss('assets/css/generated.css');
+    }
+
+}
+
+
+==
+
+<div class="generated">
+    {{ content | raw }}
+</div>

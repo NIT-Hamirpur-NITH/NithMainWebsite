@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Profile
+
+# Model Form Field configuration
+form: $/nith/profiles/models/profile/fields.yaml
+
+# Model Class name
+modelClass: NITH\Profiles\Models\Profile
+
+# Default redirect location
+defaultRedirect: nith/profiles/profiles
+
+# Create page
+create:
+    title: Create Profile
+    redirect: nith/profiles/profiles/update/:id
+    redirectClose: nith/profiles/profiles
+
+# Update page
+update:
+    title: Edit Profile
+    redirect: nith/profiles/profiles
+    redirectClose: nith/profiles/profiles
+
+# Preview page
+preview:
+    title: Preview Profile

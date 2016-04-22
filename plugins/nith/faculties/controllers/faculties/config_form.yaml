@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Faculty
+
+# Model Form Field configuration
+form: $/nith/faculties/models/faculty/fields.yaml
+
+# Model Class name
+modelClass: NITH\Faculties\Models\Faculty
+
+# Default redirect location
+defaultRedirect: nith/faculties/faculties
+
+# Create page
+create:
+    title: Create Faculty
+    redirect: nith/faculties/faculties/update/:id
+    redirectClose: nith/faculties/faculties
+
+# Update page
+update:
+    title: Edit Faculty
+    redirect: nith/faculties/faculties
+    redirectClose: nith/faculties/faculties
+
+# Preview page
+preview:
+    title: Preview Faculty

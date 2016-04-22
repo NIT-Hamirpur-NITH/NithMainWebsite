@@ -1,5 +1,6 @@
 /bootstrap/compiled.php
 /vendor
+/themes/assets/bower_components
 composer.phar
 .DS_Store
 .idea

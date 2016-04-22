@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Up
+
+# Model Form Field configuration
+form: $/nith/deptup/models/up/fields.yaml
+
+# Model Class name
+modelClass: NITH\DeptUp\Models\Up
+
+# Default redirect location
+defaultRedirect: nith/deptup/ups
+
+# Create page
+create:
+    title: Create Up
+    redirect: nith/deptup/ups/update/:id
+    redirectClose: nith/deptup/ups
+
+# Update page
+update:
+    title: Edit Up
+    redirect: nith/deptup/ups
+    redirectClose: nith/deptup/ups
+
+# Preview page
+preview:
+    title: Preview Up

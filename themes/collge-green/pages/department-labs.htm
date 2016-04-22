@@ -1,0 +1,43 @@
+title = "Department Labs"
+url = "/dept/:perma/labs"
+layout = "department"
+description = "Labs of Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['labs'] = $this['dept']->labs;
+	$this['navtitle'] = 'Labs';
+	$this['active'] = 'lab';
+}
+
+==
+{% for lab in labs %}
+<div class="data-fly">
+	<div class="hide-title">
+		<button class="btn btn-theme btn-block"> {{ lab.name }} <i class="fa fa-caret-right"></i> </button>
+	</div>
+	<div class="table-responsive lab-equipments hide-content">
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th>S.No.</th>
+					<th>Name</th>
+					<th>Quantity</th>
+					<th>Grant</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for equip in lab.equipments %}
+					<tr>
+						<td> {{ loop.index }} </td>
+						<td> {{ equip.name }} </td>
+						<td> {{ equip.quantity }} </td>
+						<td> {{ equip.grant }} </td>
+					</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endfor %}

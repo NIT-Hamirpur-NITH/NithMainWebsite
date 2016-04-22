@@ -1,0 +1,15 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+      label: ID
+      searchable: true
+    title:
+      label: Title
+      searchable: true
+    project_session:
+      label: Session
+      relation: project_session
+      select: concat(year, '-', program)

@@ -1,0 +1,24 @@
+title = "Department Notices"
+url = "/dept/:perma/notices"
+layout = "department"
+description = "Notices of Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['notices'] = $this['dept']->notices()->orderBy('isnew', 'desc')->orderBy('archive', 'asc')->orderBy('updated_at', 'desc')->paginate(2);
+	$this['navtitle'] = 'Notices';
+	$this['active'] = 'notices';
+}
+
+==
+
+{% for notice in notices %}
+<a href="/dept/{{ dept.short_name }}/notice/{{ notice.id }}">
+<div class="alert dept-notice {{ (notice.isnew) ? 'alert-info' : ((notice.archive) ? 'alert-danger' : 'alert-warning')  }}">
+	{{ notice.title }}
+</div>
+</a>
+{% endfor %}
+
+{{ notices.render() | raw }}

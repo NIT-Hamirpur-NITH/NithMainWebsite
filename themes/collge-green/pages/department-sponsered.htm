@@ -1,0 +1,43 @@
+title = "Department Sponsered Project"
+url = "/dept/:perma/projects-sponsered"
+layout = "department"
+description = "Sponsered Projects under Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['sponsered'] = $this['dept']->sponsered_pros;
+	$this['navtitle'] = 'Sponsered Projects';
+	$this['active'] = 'sponsered';
+}
+
+==
+
+<div class="table-responsive consultancies">
+	<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>S.No.</th>
+			<th>Title</th>
+			<th>Duration</th>
+			<th>Amount Received </th>
+			<th>Funding Agency</th>
+			<th>Status</th>
+			<th>Faculties</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for pro in sponsered %}
+			<tr>
+				<td> {{ loop.index }} </td>
+				<td> {{ pro.title }} </td>
+				<td> {{ pro.duration }} </td>
+				<td> {{ pro.amount }} </td>
+				<td> {{ pro.funder }} </td>
+				<td> {{ pro.status }} </td>
+				<td> {{ pro.faculties }} </td>
+			</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+</div>

@@ -1,0 +1,19 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+      label: ID
+      searchable: true
+    name:
+      label: Name
+      relation: carousel
+      select: name
+    department:
+      label: Department
+      relation: department
+      select: name
+    ismain:
+      label: Main Gallery
+      type: switch

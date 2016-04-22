@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Dept Activity
+
+# Model Form Field configuration
+form: $/nith/deptstuact/models/deptactivity/fields.yaml
+
+# Model Class name
+modelClass: NITH\DeptStuAct\Models\DeptActivity
+
+# Default redirect location
+defaultRedirect: nith/deptstuact/deptactivities
+
+# Create page
+create:
+    title: Create Dept Activity
+    redirect: nith/deptstuact/deptactivities/update/:id
+    redirectClose: nith/deptstuact/deptactivities
+
+# Update page
+update:
+    title: Edit Dept Activity
+    redirect: nith/deptstuact/deptactivities
+    redirectClose: nith/deptstuact/deptactivities
+
+# Preview page
+preview:
+    title: Preview Dept Activity

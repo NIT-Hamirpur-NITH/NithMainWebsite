@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: D Gallery
+
+# Model Form Field configuration
+form: $/nith/dgallery/models/dgallery/fields.yaml
+
+# Model Class name
+modelClass: NITH\DGallery\Models\DGallery
+
+# Default redirect location
+defaultRedirect: nith/dgallery/dgalleries
+
+# Create page
+create:
+    title: Create D Gallery
+    redirect: nith/dgallery/dgalleries/update/:id
+    redirectClose: nith/dgallery/dgalleries
+
+# Update page
+update:
+    title: Edit D Gallery
+    redirect: nith/dgallery/dgalleries
+    redirectClose: nith/dgallery/dgalleries
+
+# Preview page
+preview:
+    title: Preview D Gallery

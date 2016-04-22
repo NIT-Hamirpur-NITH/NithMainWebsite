@@ -1,0 +1,27 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+      label: ID
+      disabled: true
+      span: left
+    roll_number:
+      label: Roll Number
+      span: right
+    name:
+      label: Name
+      required: true
+    department:
+      label: Department
+      type: relation
+      nameFrom: name
+    program:
+      label: Program
+      type: dropdown
+    year:
+      label: Year
+      type: dropdown
+
+

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Lab
+
+# Model Form Field configuration
+form: $/nith/labs/models/lab/fields.yaml
+
+# Model Class name
+modelClass: NITH\Labs\Models\Lab
+
+# Default redirect location
+defaultRedirect: nith/labs/labs
+
+# Create page
+create:
+    title: Create Lab
+    redirect: nith/labs/labs/update/:id
+    redirectClose: nith/labs/labs
+
+# Update page
+update:
+    title: Edit Lab
+    redirect: nith/labs/labs
+    redirectClose: nith/labs/labs
+
+# Preview page
+preview:
+    title: Preview Lab

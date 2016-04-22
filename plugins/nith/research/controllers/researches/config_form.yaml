@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Research
+
+# Model Form Field configuration
+form: $/nith/research/models/research/fields.yaml
+
+# Model Class name
+modelClass: NITH\Research\Models\Research
+
+# Default redirect location
+defaultRedirect: nith/research/researches
+
+# Create page
+create:
+    title: Create Research
+    redirect: nith/research/researches/update/:id
+    redirectClose: nith/research/researches
+
+# Update page
+update:
+    title: Edit Research
+    redirect: nith/research/researches
+    redirectClose: nith/research/researches
+
+# Preview page
+preview:
+    title: Preview Research

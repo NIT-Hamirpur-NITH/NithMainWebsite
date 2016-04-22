@@ -1,0 +1,30 @@
+tabs:
+    fields:
+        # tab: Basic
+        id:
+            label: ID
+            disabled: true
+            span: left
+            tab: Basic
+        department:
+            label: Department
+            type: relation
+            nameFrom: name
+            span: left
+            tab: Basic
+            required: true
+        designation:
+            label: Designation
+            required: true
+            tab: Basic
+        resume:
+            label: Resume
+            type: fileupload
+            mode: file
+            tab: Basic
+        # tab: Profile
+        profile:
+            label: Profile
+            type: partial
+            path: field_profiles
+            tab: Profile

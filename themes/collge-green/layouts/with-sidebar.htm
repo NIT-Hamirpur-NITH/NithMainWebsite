@@ -1,0 +1,91 @@
+description = "Content with sidebar"
+
+==
+<?php
+function onStart() {
+    $this['title'] = 'Content with Sidebar';
+}
+?>
+==
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title> NITH | {{ title }} </title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+
+    {% partial 'common-css' %}
+    <link rel="stylesheet" href="{{ 'assets/css/content.css' | theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/sidebar.css' | theme }}">
+    {% styles %}
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+    <!-- WRAPPER -->
+    <div class="wrapper">
+
+        <!-- HEADER -->
+        {% partial 'main-nav' %}
+
+
+        <!-- MAIN CONTENT WITH SIDEBAR -->
+        <div class="content container">
+            <div class="page-wrapper">
+                <!-- HEADING -->
+                <header class="page-heading clearfix">
+                    <h1 class="heading-title pull-left">
+                        {{ title }}
+                        {% if subtitle %}
+                        :&nbsp;
+                        <span>
+                            {{ subtitle }}
+                        </span>
+                        {% endif %}
+                    </h1>
+                </header>
+                <!-- HEADING -->
+                <div class="page-content">
+                    <div class="row page-row">
+                        <!-- PAGE CONTENT -->
+                        <div class="course-wrapper col-md-8 col-sm-7">
+                            {% page %}
+                        </div>
+                        <!-- //PAGE CONTENT -->
+                        <!-- SIDEBAR -->
+                        <aside class="page-sidebar  col-md-3 col-md-offset-1 col-sm-4 col-sm-offset-1">
+                            {% partial 'main-sidebar' %}
+                        </aside>
+                        <!-- //SIDEBAR -->
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //MAIN CONTENT WITH SIDEBAR -->
+
+    </div>
+    <!-- //WRAPPER -->
+
+    <!-- FOOTER -->
+    {% partial 'main-footer' %}
+
+    <!-- Javascript -->
+    {% partial 'common-js' %}
+    <script type="text/javascript" src="{{ 'assets/js/content.js' | theme }}"></script>
+    {% scripts %}
+
+</body>
+</html>

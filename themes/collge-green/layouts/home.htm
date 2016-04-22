@@ -1,0 +1,63 @@
+description = "Home page layout"
+==
+
+function onStart() {
+  $this['title'] = 'Home';
+}
+
+
+==
+
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+<head>
+    <title>NITH | {{ title }}</title>
+    <!-- Meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- Global CSS -->
+    {% partial 'common-css' %}
+
+    <link rel="stylesheet" href="{{ 'assets/plugins/flexslider/flexslider.css' | theme }}">
+    <link rel="stylesheet" href="{{ 'assets/plugins/pretty-photo/css/prettyPhoto.css' | theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/home.css' | theme }}">
+    <link rel="stylesheet" href="{{ 'assets/css/grid.css' | theme }}">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body class="home-page">
+    <div class="wrapper">
+
+        <!-- HEADER -->
+        {% partial 'main-nav' %}
+
+        <!-- PAGE CONTENT -->
+        {% page %}
+
+    </div>
+
+    <!-- FOOTER -->
+    {% partial 'main-footer' %}
+
+
+    <!-- Javascript -->
+    {% partial 'common-js' %}
+    <script type="text/javascript" src="{{ 'assets/plugins/jquery-placeholder/jquery.placeholder.js' | theme }}"></script>
+    <script type="text/javascript" src="{{ 'assets/plugins/flexslider/jquery.flexslider-min.js' | theme }}"></script>
+    <script type="text/javascript" src="{{ 'assets/plugins/pretty-photo/js/jquery.prettyPhoto.js' | theme }}"></script>
+    <script type="text/javascript" src="{{ 'assets/js/grid.js' | theme }}"></script>
+    <script type="text/javascript" src="{{ 'assets/js/home.js' | theme }}"></script>
+
+
+</body>
+</html>

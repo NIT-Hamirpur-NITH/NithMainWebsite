@@ -1,0 +1,23 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: Title
+        searchable: true
+    start_date:
+        label: Start Date
+        searchable: true
+        type: text
+    end_date:
+        label: End Date
+        searchable: true
+        type: text
+        default: NA
+    archive:
+        label: Archived
+        type: switch

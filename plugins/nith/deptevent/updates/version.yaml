@@ -1,0 +1,4 @@
+1.0.1: First version of DeptEvent
+1.0.2:
+  - Create DeptEvents Table
+  - create_dept_events_table.php

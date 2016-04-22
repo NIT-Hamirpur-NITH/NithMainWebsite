@@ -1,0 +1,7 @@
+1.0.1: First version of Labs
+1.0.2:
+  - Create Labs Table
+  - create_labs_table.php
+1.0.3:
+  - Create Equipments Table
+  - create_equipment_table.php

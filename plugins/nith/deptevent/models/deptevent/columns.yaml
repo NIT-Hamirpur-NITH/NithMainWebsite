@@ -1,0 +1,20 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+      label: ID
+      searchable: true
+    name:
+      label: Name
+      searchable: true
+    department:
+      label: Department
+      searchable: true
+      realtion: department
+      select: name
+    attended_by:
+      label: Attendy
+      searchable: true
+      searchable: true

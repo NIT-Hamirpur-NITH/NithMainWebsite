@@ -1,0 +1,53 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    defaultTab: Data
+    fields:
+        id:
+            label: ID
+            disabled: true
+            span: left
+        type:
+            label: Notice Section
+            type: dropdown
+            options:
+                0: Others
+                1: Academics
+                2: Administration
+            span: right
+        title:
+            label: Title
+            type: text
+            placeholder: Enter the title of the event (limit: 255 chars)
+            required: true
+        doc:
+            label: Document
+            type: fileupload
+            mode: file
+            fileTypes: jpg,jpeg,png,gif,pdf,odt,doc,docx,xls,xlsx,ppt,pptx
+            span: left
+            commentAbove: Add a file to asscociate with this event
+        link:
+            label: Link
+            type: text
+            span: right
+            placeholder: Use this to link this event to a url
+        archive:
+            label: Archive
+            type: switch
+            default: false
+            required: true
+            span: left
+        isnew:
+            label: New
+            type: switch
+            default: true
+            required: true
+            span: left
+        content:
+            tab: Content
+            label: Content
+            size: giant
+            type: richeditor

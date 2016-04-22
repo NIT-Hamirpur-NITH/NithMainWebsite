@@ -1,0 +1,70 @@
+title = "Projects Faculty"
+url = "/dept/:perma/projects/:program"
+layout = "department"
+description = "Projects under Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$program = $this->param('program');
+	
+	if ($program == 'btech') {
+		$this['sessions'] = $this['dept']->project_sessions()->where('program', '=', 0)->orderBy('year', 'desc')->paginate(2);
+		$this['navtitle'] = 'B.Tech. Projects';
+		$this['active'] = 'btechpro';
+	} else if ($program == 'mtech') {
+		$this['sessions'] = $this['dept']->project_sessions()->where('program', '=', 1)->orderBy('year', 'desc')->paginate(2);
+		$this['navtitle'] = 'M.Tech. Projects';
+		$this['active'] = 'mtechpro';
+	} else {
+		return Redirect::to('/404');
+	}
+
+}
+
+==
+
+{% for session in sessions %}
+<div class="data-fly">
+	<div class="session-year hide-title">
+		<button class="btn btn-theme btn-block"> {{ session.year }} - {{ session.year + 1 }} <i class="fa fa-caret-right"></i> </button>
+	</div>
+	<div class="table-responsive consultancies hide-content">
+		<p>
+			{{ session.about | raw }}
+		</p>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th> Mentor </th>
+					<th> Title </th>
+					<th> Students </th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for project in session.projects %}
+				<tr>
+					<td> {{ project.faculty.profile.name }} </td>
+					<td>
+						{% if project.report %}
+						<a href="{{ project.report.path }}">
+							{{ project.title }}		
+						</a>
+						{% else %}
+							{{ project.title }} 
+						{% endif %}
+					</td>
+					<td>
+						{% for student in project.students %}
+							<strong>{{ student.name }} ({{ student.roll_number }})</strong> <br>
+						{% endfor %}
+					</td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endfor %}
+
+{{ sessions.render() | raw }}

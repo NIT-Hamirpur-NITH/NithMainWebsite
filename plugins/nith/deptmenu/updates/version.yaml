@@ -1,0 +1,7 @@
+1.0.1: First version of DeptMenu
+1.0.2:
+  - Create Header Table
+  - create_headers_table.php
+1.0.3:
+  - Create Items Table
+  - create_items_table.php

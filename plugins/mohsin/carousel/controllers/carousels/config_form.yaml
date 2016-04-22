@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Carousel
+
+# Model Form Field configuration
+form: $/mohsin/carousel/models/carousel/fields.yaml
+
+# Model Class name
+modelClass: Mohsin\Carousel\Models\Carousel
+
+# Default redirect location
+defaultRedirect: mohsin/carousel/carousels
+
+# Create page
+create:
+    title: mohsin.carousel::lang.carousels.create_carousels
+    redirect: mohsin/carousel/carousels/update/:id
+    redirectClose: mohsin/carousel/carousels
+
+# Update page
+update:
+    title: mohsin.carousel::lang.carousels.update_carousels
+    redirect: mohsin/carousel/carousels
+    redirectClose: mohsin/carousel/carousels
+
+# Preview page
+preview:
+    title: mohsin.carousel::lang.carousels.preview_carousels

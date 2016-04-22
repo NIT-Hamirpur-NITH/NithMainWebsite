@@ -1,0 +1,20 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+      label: ID
+      searchable: true
+    year:
+      label: Year
+      searchable: true
+    department:
+      relation: department
+      select: name
+      searchable: true
+    program:
+      type: partial
+      path: ~/plugins/nith/projects/models/projectsession/_content_program.htm
+
+

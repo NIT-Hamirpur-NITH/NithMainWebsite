@@ -1,0 +1,60 @@
+title = "Department Attendence"
+url = "/dept/:perma/attended/:type"
+layout = "department"
+description = "Attendeded by faculties of Department"
+is_hidden = 0
+==
+
+use NITH\DeptEvent\Models\DeptEvent;
+
+function onStart() {
+	$type = $this->param('type');
+
+	if ($type == 'seminars') {
+		$this['events'] = $this['dept']->events()->where('type', '=', 0)->orderBy('start_date', 'desc')->paginate(2);
+		$this['navtitle'] = 'Seminars Attended';
+		$this['active'] = 'seminars';
+	} else if ($type == 'conferences') {
+		$this['events'] = $this['dept']->events()->where('type', '=', 1)->orderBy('start_date', 'desc')->paginate(2);
+		$this['navtitle'] = 'Conferences Attended';
+		$this['active'] = 'conferences';
+	} else if ($type == 'schools') {
+		$this['events'] = $this['dept']->events()->where('type', '=', 2)->orderBy('start_date', 'desc')->paginate(2);
+		$this['navtitle'] = 'Winter/Summer Attended';
+		$this['active'] = 'schools';
+	} else if ($type == 'workshops') {
+		$this['events'] = $this['dept']->events()->where('type', '=', 3)->orderBy('start_date', 'desc')->paginate(2);
+		$this['navtitle'] = 'Workshops Attended';
+		$this['active'] = 'workshops';
+	} else {
+		Redirect::to('/404');
+	}
+
+}
+
+==
+
+
+<ul class="list-unstyled dept-attended">
+	{% for event in events %}
+		<li>
+			<p class="attendee">
+				<i class="fa fa-star"></i>
+				<strong> {{ event.attended_by }} </strong>
+				<small> attended </small>
+			</p>
+			<h3 class="tit"> {{ event.name }}  </h3>
+			<p class="at"> <strong> At: </strong> &nbsp; {{ event.at }} </p>
+			<p class="date">
+				<strong> On: </strong> &nbsp;
+				{{ event.start_date }}
+				{% if event.end_date %}
+					<small> to </small>
+					{{ event.end_date }}
+				{% endif %}
+			</p>
+		</li>
+	{% endfor %}
+</div>
+
+{{  events.render() | raw }}

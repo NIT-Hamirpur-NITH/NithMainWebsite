@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+        label: ID
+        disabled: true
+    title:
+        label: Title
+        required: true
+    link:
+        label: Link
+        required: true
+    isnew:
+        label: New
+        required: true
+        default: false
+        type: switch

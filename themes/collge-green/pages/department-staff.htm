@@ -1,0 +1,49 @@
+title = "Department Staff"
+url = "/dept/:perma/staff"
+layout = "department"
+description = "Staff of Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['staffs'] = $this['dept']->staffs;
+	$this['navtitle'] = 'Staff';
+	$this['active'] = 'staff';
+}
+
+==
+
+<div class="table-responsive dept-staff">
+	<table class="table table-striped">
+		<thead>
+			<tr>
+				<th></th>
+				<th>Name</th>
+				<th>Designation</th>
+				<th>Contact</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for staff in staffs %}
+			<tr>
+				<td class='staff-image'> 
+					<img src="{{ staff.profile.profile_image.getThumb(120, 80) }}" alt="{{ staff.profile.name }}" class="img-responsive img-circle" /> </td>
+				<td>  {{ staff.profile.name }} </td>
+				<td> {{ staff.designation }} </td>
+				<td>
+					<p class="contact"><i class="fa fa-phone fa-fw text-muted"></i>
+						{% if staff.profile.phone_office %} <i>Office:</i> {{ staff.profile.phone_office }} {% endif %}
+						{% if staff.profile.phone_residence %} | <i>Residence:</i> {{ staff.profile.phone_residence }} {% endif %}
+					</p>
+					{% if staff.profile.fax %}
+						<p class="contact"><i class="fa fa-fax fa-fw text-muted"></i> {{ staff.profile.fax }} </p>
+					{% endif %}
+					{% if staff.profile.email %}
+						<p class="contact"><i class="fa fa-envelope-o fa-fw text-muted"></i> {{ staff.profile.email }} </p>
+					{% endif %}
+				</td>
+			</tr>
+			{% endfor %}		
+		</tbody>
+	</table>
+</div>

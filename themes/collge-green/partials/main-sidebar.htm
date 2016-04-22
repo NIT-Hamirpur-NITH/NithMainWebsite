@@ -1,0 +1,66 @@
+description = "Main Sidebar"
+
+[viewBag]
+snippetCode = "main-sidebar"
+snippetName = "Main Sidebar"
+==
+
+use NITH\Events\Models\Event;
+use NITH\News\Models\NewsItem;
+use NITH\Notices\Models\Notice;
+
+function onStart() {
+    $this['title'] = 'Home';
+    $this['events'] = Event::where('archive', '=', false)->orderBy('start_date', 'asc')->take(5)->get();
+    $this['news_items'] = NewsItem::where('archive', '=', false)->orderBy('created_at', 'desc')->take(5)->get();
+    $this['notices'] = Notice::where('isnew', '=', true)->orderBy('updated_at', 'desc')->take(5)->get();
+}
+
+
+==
+<!-- NOTICES -->
+<section class="widget has-divider">
+    <h3 class="title">Notices</h3>
+    <ul class="side-notices list-unstyled">
+        {% for notice in notices %}
+            <a href="/notice/{{notice.id}}"><li> <i class="fa fa-caret-right"></i> {{ notice.title }} </li></a>
+        {% endfor %}
+    </ul>
+    <a class="btn btn-theme btn-sm" href="/all-notices/"> All Notices </a>
+</section>
+<!-- //NOTICES -->
+
+<!-- EVENTS -->
+<section class="widget has-divider">
+    <h3 class="title">Upcoming Events</h3>
+    <ul class="side-events list-unstyled">
+        {% for event in events %}
+            <a href="/event/{{event.id}}">
+                <li>
+                    <i class="fa fa-caret-right"></i>
+                    {{ event.title }}
+                    <p>
+                        {{ event.getStartDate() }}
+                        {% if event.end_date %}
+                            <small class="text-muted"> &nbsp; to &nbsp; </small>  {{ event.getEndDate() }}
+                        {% endif %}
+                    </p>
+                </li>
+            </a>
+        {% endfor %}
+    </ul>
+    <a class="btn btn-theme btn-sm" href="/all-events/"> All Events </a>
+</section>
+<!-- //EVENTS -->
+
+<!-- NEWS -->
+<section class="widget has-divider">
+    <h3 class="title"> Recent News </h3>
+    <ul class="side-news list-unstyled">
+        {% for news in news_items %}
+            <a href="/news/{{news.id}}"><li> <i class="fa fa-caret-right"></i> {{ news.title }} </li></a>
+        {% endfor %}
+    </ul>
+    <a class="btn btn-theme btn-sm" href="/all-news/"> News Archive </a>
+</section>
+<!-- //NEWS -->

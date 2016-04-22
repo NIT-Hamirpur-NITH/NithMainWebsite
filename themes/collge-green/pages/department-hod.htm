@@ -1,0 +1,24 @@
+title = "Department HOD"
+url = "/dept/:perma/hods-message"
+layout = "department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['hod'] = $this['dept']->hod;
+	$this['navtitle'] = "HOD's Message";
+	$this['active'] = 'hod';
+}
+
+==
+
+<div class="hod">
+	
+	<img class="img-responsive img-circle" src="{{ hod.faculty.profile.profile_image.path }}" alt="{{ hod.faculty.profile.name }}" />
+	<p> {{ hod.message | raw }} </p>
+	<p class="hod-detail"> 
+		<span class="name"> {{ hod.faculty.profile.name }} </span> <br />
+		Head Of Department, <br />
+		<strong> {{ dept.name }} </strong>
+	</p>
+</div>

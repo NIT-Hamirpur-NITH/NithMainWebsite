@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Facmenu
+
+# Model Form Field configuration
+form: $/nith/facmenus/models/facmenu/fields.yaml
+
+# Model Class name
+modelClass: NITH\Facmenus\Models\Facmenu
+
+# Default redirect location
+defaultRedirect: nith/facmenus/facmenus
+
+# Create page
+create:
+    title: Create Facmenu
+    redirect: nith/facmenus/facmenus/update/:id
+    redirectClose: nith/facmenus/facmenus
+
+# Update page
+update:
+    title: Edit Facmenu
+    redirect: nith/facmenus/facmenus
+    redirectClose: nith/facmenus/facmenus
+
+# Preview page
+preview:
+    title: Preview Facmenu

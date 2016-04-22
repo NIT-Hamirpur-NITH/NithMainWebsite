@@ -1,0 +1,4 @@
+1.0.1: First version of DeptStuAct
+1.0.2:
+  - Create DeptActivities Table
+  - create_dept_activities_table.php

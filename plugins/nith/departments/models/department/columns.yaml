@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    name:
+        label: Name
+        searchable: true
+    short_name:
+        label: Short Name
+    type:
+        label: Type
+        type: partial
+        path: ~/plugins/nith/departments/models/department/content_type.htm

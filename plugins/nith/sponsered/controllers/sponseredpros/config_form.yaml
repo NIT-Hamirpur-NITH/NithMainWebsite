@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Sponsered Pro
+
+# Model Form Field configuration
+form: $/nith/sponsered/models/sponseredpro/fields.yaml
+
+# Model Class name
+modelClass: NITH\Sponsered\Models\SponseredPro
+
+# Default redirect location
+defaultRedirect: nith/sponsered/sponseredpros
+
+# Create page
+create:
+    title: Create Sponsered Pro
+    redirect: nith/sponsered/sponseredpros/update/:id
+    redirectClose: nith/sponsered/sponseredpros
+
+# Update page
+update:
+    title: Edit Sponsered Pro
+    redirect: nith/sponsered/sponseredpros
+    redirectClose: nith/sponsered/sponseredpros
+
+# Preview page
+preview:
+    title: Preview Sponsered Pro

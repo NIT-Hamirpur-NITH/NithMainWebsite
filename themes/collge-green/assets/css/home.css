@@ -1,0 +1,162 @@
+/**
+ * Green #57a89a
+ * Red #a85770
+ */
+
+/**
+ * Common
+ */
+.popover-title {
+     font-family: Patua One, Times New Roman, serif;
+     font-size: 15px;
+ }
+ .popover-content {
+     font-size: 12px;
+     font-family: Lato, Arial, sans-serif;
+ }
+
+
+/**
+ * Carousel
+ */
+@media (min-width: 980px) {
+  #promo-slider img, .home-page .promo {
+    height: 400px;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 979px) {
+  #promo-slider img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 599px) {
+  #promo-slider img {
+    height: 200px;
+  }
+}
+
+/**
+ * Quick Links
+ */
+
+.links {
+  padding-bottom: 20px;
+  margin-left: 15px;
+  height: 250px;
+}
+
+.links .section-content p {
+  position: relative;
+  margin: 5px 0px;
+}
+
+.links .section-content p a {
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+}
+
+.links .section-content p a span.badge, .notices .section-content p a span.badge {
+  font-size: 10px;
+  position: relative;
+  top:  -4px;
+}
+
+
+.home-page .news .news-item {
+  padding-left: 0px;
+}
+
+
+/**
+ * News
+ */
+section.news .section-content #news-carousel .news-item h2 a {
+  font-family: PT Serif, Times News Roman, serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: black;
+}
+
+section.news .section-content #news-carousel .news-item p {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 14px;
+  cursor: help;
+}
+
+
+/**
+ * Activities
+ */
+
+ .activities {
+   min-height: 200px;
+   height: 250px;
+ }
+
+ .activities #activities-carousel {
+   padding-left: 20px;
+ }
+
+.events .carousel-controls {
+  margin: 10px;
+}
+
+#activities-carousel .event-item {
+  border: 0px;
+}
+
+#activities-carousel .event-item .details .title {
+  margin-top: 0px;
+}
+
+#events-carousel .event-item .details .title, #activities-carousel .event-item .details .title {
+  margin-bottom: 10px;
+}
+
+#events-carousel .event-item .details .title a, #activities-carousel .event-item .details .title a {
+  font-family: PT Serif, Times News Roman, serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+#events-carousel .event-item .details .title a:hover, #activities-carousel .event-item .details .title a:hover {
+  text-decoration: underline;
+  color: #446;
+}
+
+#events-carousel .event-item .details .event-clamp, #activities-carousel .event-item .details .event-clamp {
+  cursor: help;
+  color: #222;
+}
+
+/**
+ * Notices
+ */
+
+.notices {
+  min-height: 300px;
+}
+
+.notices .notice-part h2 {
+  font-family: PT Serif, Times New Roman, serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 10px;
+}
+
+.notices .notice-part p {
+  margin: 0px;
+}
+
+.notices .notice-part p a {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.notices .notice-part p a i.fa {
+  margin-right: 5px;
+}

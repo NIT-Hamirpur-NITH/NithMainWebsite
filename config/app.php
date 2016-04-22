@@ -116,6 +116,7 @@ return [
         // 'Illuminate\Html\HtmlServiceProvider', // Example
 
         'System\ServiceProvider',
+        Yajra\Datatables\DatatablesServiceProvider::class,
     ]),
 
     /*
@@ -132,6 +133,7 @@ return [
     'aliases' => array_merge(include(base_path().'/modules/system/aliases.php'), [
 
         // 'Str' => 'Illuminate\Support\Str', // Example
+        'Datatables' => Yajra\Datatables\Datatables::class,
 
     ]),
 

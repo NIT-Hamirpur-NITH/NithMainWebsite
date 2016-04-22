@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Student
+
+# Model Form Field configuration
+form: $/nith/students/models/student/fields.yaml
+
+# Model Class name
+modelClass: NITH\Students\Models\Student
+
+# Default redirect location
+defaultRedirect: nith/students/student
+
+# Create page
+create:
+    title: Create Student
+    redirect: nith/students/student/update/:id
+    redirectClose: nith/students/student
+
+# Update page
+update:
+    title: Edit Student
+    redirect: nith/students/student
+    redirectClose: nith/students/student
+
+# Preview page
+preview:
+    title: Preview Student

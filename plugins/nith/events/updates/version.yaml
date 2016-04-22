@@ -1,0 +1,4 @@
+1.0.1: First version of Events
+1.0.2:
+    - Create table for events
+    - create_events_table.php

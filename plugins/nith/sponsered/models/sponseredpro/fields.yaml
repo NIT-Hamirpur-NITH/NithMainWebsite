@@ -1,0 +1,38 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+      label: ID
+      disabled: true
+    title:
+      label: Title
+      required: true
+      type: textarea
+      span: left
+    duration:
+      label: Duration
+      required: true
+      span: right
+    amount:
+      label: Amount
+      required: true
+      span: right
+    funder:
+      label: Funding Agency
+      required: true
+      span: right
+    status:
+      label: Status
+      required: true
+    faculties:
+      label: Faculties Involved
+      required: true
+    department:
+      label: Department
+      required: true
+      type: relation
+      nameFrom: name
+
+

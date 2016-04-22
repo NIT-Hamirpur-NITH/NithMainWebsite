@@ -1,0 +1,56 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    defaultTab: Data
+    fields:
+        id:
+            label: ID
+            disabled: true
+            span: left
+        title:
+            label: Title
+            type: text
+            placeholder: Enter the title of the event (limit: 255 chars)
+            required: true
+        description:
+            label: Description
+            type: textarea
+            span: left
+            required: true
+            placeholder: Enter a short description for the event
+        link:
+            label: Link
+            type: text
+            span: right
+            placeholder: Use this to link this event to a url
+        start_date:
+            label: Start Date
+            type: datepicker
+            mode: date
+            required: true
+            span: right
+        end_date:
+            label: End Date
+            type: datepicker
+            mode: date
+            span: right
+        archive:
+            label: Archive
+            type: switch
+            default: false
+            required: true
+            span: right
+        doc:
+            label: Document
+            type: fileupload
+            mode: file
+            fileTypes: jpg,jpeg,png,gif,pdf,odt,doc,docx,xls,xlsx,ppt,pptx
+            span: left
+            commentAbove: Add a file to asscociate with this event
+        content:
+            tab: Content
+            label: Content
+            size: giant
+            type: richeditor

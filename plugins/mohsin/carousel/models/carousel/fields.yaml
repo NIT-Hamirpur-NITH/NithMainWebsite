@@ -1,0 +1,13 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        span: full
+        label: mohsin.carousel::lang.model.name
+
+    images:
+        label: mohsin.carousel::lang.model.photos
+        type: fileupload
+        mode: image

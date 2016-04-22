@@ -1,0 +1,43 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+      label: ID
+      disabled: true
+    name:
+      label: Work
+      required: true
+      type: textarea
+      span: left
+    duration:
+      label: Duration
+      required: true
+      span: right
+    amount:
+      label: Amount Received
+      required: true
+      span: right
+    source:
+      label: Source
+      required: true
+      span: right
+    status:
+      label: Staus
+      type: radio
+      options:
+        0: In Process
+        1: Completed
+      span: left
+    faculties:
+      label: Faculties
+      required: true
+      span: right
+    department:
+      type: relation
+      nameFrom: name
+      required: true
+      span: right
+    
+

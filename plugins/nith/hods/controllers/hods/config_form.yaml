@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Hod
+
+# Model Form Field configuration
+form: $/nith/hods/models/hod/fields.yaml
+
+# Model Class name
+modelClass: NITH\Hods\Models\Hod
+
+# Default redirect location
+defaultRedirect: nith/hods/hods
+
+# Create page
+create:
+    title: Create Hod
+    redirect: nith/hods/hods/update/:id
+    redirectClose: nith/hods/hods
+
+# Update page
+update:
+    title: Edit Hod
+    redirect: nith/hods/hods
+    redirectClose: nith/hods/hods
+
+# Preview page
+preview:
+    title: Preview Hod

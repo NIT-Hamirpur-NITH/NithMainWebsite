@@ -1,0 +1,7 @@
+1.0.1: First version of Research
+1.0.2:
+  - Create Research Tables
+  - create_researches_table.php
+1.0.3:
+  - Relate Facutly And Research
+  - relate_faculty_research.php

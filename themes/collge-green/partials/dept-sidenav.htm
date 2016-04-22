@@ -1,0 +1,140 @@
+description = "Department profile sidebar navigation"
+[viewBag]
+==
+==
+
+
+<div class="well dept-menu">
+  <ul class="nav nav-list-top">
+  
+    <a href='/dept/{{ dept.short_name }}' class="btn btn-block btn-success text-left"><i class="fa fa-home"> &nbsp; HOME </i></a>
+
+    <li>
+      <p class="tree-toggle nav-header">ABOUT <i class="fa fa-caret-right"></i></p>
+      <ul class="nav nav-list tree">
+        <li class="{{ (active == 'about') ? 'active' : '' }}">
+          <a href="/dept/{{ dept.short_name }}/about"> About {{ dept.short_name | upper }}</a>
+        </li>
+        <li  class="{{ (active == 'hod') ? 'active' : '' }}">
+          <a href="/dept/{{ dept.short_name }}/hods-message"> HOD's Message</a>
+        </li>
+        <li class="{{ (active == 'gallery') ? 'active' : '' }}">
+          <a href="/dept/{{ dept.short_name }}/galleries"> Galleries </a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <p class="tree-toggle nav-header">ACADEMICS <i class="fa fa-caret-right"></i></p>
+      <ul class="nav nav-list tree">
+      	<li class="{{ (active == 'notices') ? 'active' : '' }}" >
+      		<a href="/dept/{{ dept.short_name }}/notices"> Notices </a>
+      	</li>
+        <li class="{{ (active == 'programs') ? 'active' : '' }}">
+          <a href="/dept/{{ dept.short_name }}/programs"> Programs Offered </a>
+        </li>
+        <li class="{{ (active == 'courses') ? 'active' : '' }}">
+          <a href="/dept/{{ dept.short_name }}/courses"> Courses Offered </a>
+        </li>
+        <li class="{{ (active == 'current') ? 'active' : '' }}">
+          <a href="/dept/{{ dept.short_name }}/current-session"> Current Session </a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <p class="tree-toggle nav-header"> PEOPLE <i class="fa fa-caret-right"></i></p>
+      <ul class="nav nav-list tree">
+        <li class="{{ (active == 'faculty') ? 'active' : '' }}"><a href="/dept/{{ dept.short_name }}/faculty"> Facutly </a></li>
+        <li class="{{ (active == 'student') ? 'active' : '' }}"><a href="/dept/{{ dept.short_name }}/students"> Student </a></li>
+        <li class="{{ (active == 'staff') ? 'active' : '' }}"><a href="/dept/{{ dept.short_name }}/staff"> Staff </a></li>
+      </ul>
+    </li>
+
+    <li>
+      <p class="tree-toggle nav-header"> RESEARCH <i class="fa fa-caret-right"></i> </p>
+      <ul class="nav nav-list tree">
+        <li class="{{ (active == 'publication') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/publications">Publications</a>
+        </li>
+        <li class="{{ (active == 'lab') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/labs">Labs</a>
+        </li>
+        <li class="{{ (active == 'consultancy') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/consultancies">Consultancies</a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <p class="tree-toggle nav-header"> PROJECTS <i class="fa fa-caret-right"></i> </p>
+      <ul class="nav nav-list tree">
+        <li class="{{ (active == 'btechpro') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/projects/btech"> B.Tech. </a>
+        </li>
+        <li class="{{ (active == 'mtechpro') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/projects/mtech"> M.Tech. </a>
+        </li>
+        <li class="{{ (active == 'sponsered') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/projects-sponsered"> Sponsered Projects </a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <p class="tree-toggle nav-header"> UPCOMING EVENTS <i class="fa fa-caret-right"></i></p>
+      <ul class="nav nav-list tree">
+        <li class="{{ (active == 'activity') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/all-activities">  Student Activities </a>
+        </li>
+        <li class="{{ (active == 'upcoming') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/events">  Upcoming Events </a>
+        </li>
+      </ul>
+    </li>
+
+    <li>
+      <p class="tree-toggle nav-header"> ATTENDED EVENTS <i class="fa fa-caret-right"></i></p>
+      <ul class="nav nav-list tree">
+        <li class="{{ (active == 'seminars') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/attended/seminars"> Seminars </a>
+        </li>
+        <li class="{{ (active == 'conferences') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/attended/conferences"> Conferences </a>
+        </li>
+        <li class="{{ (active == 'schools') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/attended/schools"> Summer/Winder Schools </a>
+        </li>
+        <li class="{{ (active == 'workshops') ? 'active' : '' }}">
+        	<a href="/dept/{{ dept.short_name }}/attended/workshops"> Workshops </a>
+        </li>
+      </ul>
+    </li>
+
+    {% for menu in dept.menus %}
+    <li>
+      {% if menu.isheader %}
+        <p class="tree-toggle nav-header"> {{ menu.title | upper }} <i class="fa fa-caret-right"></i></p>
+        <ul class="nav nav-list tree">
+          {% for item in menu.items %}
+          <li class="{{ (active == 'm' ~ item.id) ? 'active' : '' }}">
+            <a href="/dept/{{ dept.short_name }}/m/{{ item.id }}"> {{ item.title }} </a>
+          </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <a href="/dept/{{ dept.short_name }}/h/{{ menu.id }}" class="btn btn-block btn-theme single-header"> {{ menu.title | upper }} </a>
+      {% endif %}
+    </li>
+    {% endfor %}
+
+  </ul>
+
+  <div class="dept-contact">
+    <p class="address"> {{ dept.dept_detail.address }} </p>
+    <p class="phone"> <strong>Office:</strong> {{ dept.dept_detail.phone }} </p>
+    <p class="phone"> <strong>HOD:</strong> {{ dept.hod.faculty.profile.phone_office }} </p>
+    <p class="email"> <strong>Email:</strong> {{ dept.dept_detail.email }} </p>
+  </div>
+
+</div>

@@ -1,0 +1,149 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+hod:
+    label: Hod
+    view:
+        form: $/nith/hods/models/hod/fields.yaml
+        toolbarButtons: update|delete
+    manage:
+        form: $/nith/hods/models/hod/fields.yaml
+        list: $/nith/hods/models/hod/columns.yaml
+faculties:
+    label: Faculties
+    manage:
+        form: $/nith/faculties/models/faculty/fields.yaml
+        list: $/nith/faculties/models/faculty/columns.yaml
+    view:
+        list: $/nith/faculties/models/faculty/columns.yaml
+        toolbarButtons: create|delete|add
+        showSearch: true
+        showCheckboxes: true
+staffs:
+    label: Staff
+    manage:
+        form: $/nith/staff/models/staff/fields.yaml
+        list: $/nith/staff/models/staff/columns.yaml
+    view:
+        list: $/nith/staff/models/staff/columns.yaml
+        toolbarButtons: create|delete|add
+        showSearch: true
+        showCheckboxes: true
+students:
+    label: Students
+    manage:
+        form: $/nith/students/models/student/fields.yaml
+        list: $/nith/students/models/student/columns.yaml
+    view:
+        list: $/nith/students/models/student/columns.yaml
+        toolbarButtons: create|delete|add
+        showSearch: true
+        showCheckboxes: true
+labs:
+    label: Labs
+    manage:
+        form: $/nith/labs/models/lab/fields.yaml
+        list: $/nith/labs/models/lab/columns.yaml
+    view:
+        list: $/nith/labs/models/lab/columns.yaml
+        toolbarButtons: delete|add
+        showSearch: true
+        showCheckboxes: true
+menus:
+    label: Menus
+    manage:
+        form: $/nith/deptmenu/models/header/fields.yaml
+        list: $/nith/deptmenu/models/header/columns.yaml
+    view:
+        list: $/nith/deptmenu/models/header/columns.yaml
+        toolbarButtons: delete|add
+        showSearch: true
+        showCheckboxes: true
+project_sessions:
+    label: Projects
+    manage:
+        form: $/nith/projects/models/projectsession/fields.yaml
+        list: $/nith/projects/models/projectsession/columns.yaml
+    view:
+        list: $/nith/projects/models/projectsession/columns.yaml
+        toolbarButtons: delete|add
+    readOnly: true
+consultancies:
+    label: Consultancies
+    manage:
+        form: $/nith/consultancy/models/consultancy/fields.yaml
+        list: $/nith/consultancy/models/consultancy/columns.yaml
+    view:
+        list: $/nith/consultancy/models/consultancy/columns.yaml
+        toolbarButtons: create|delete|add
+        showSearch: true
+        showCheckboxes: true
+sponsered_pros:
+    label: Sponsered Projects
+    manage:
+        form: $/nith/sponsered/models/sponseredpro/fields.yaml
+        list: $/nith/sponsered/models/sponseredpro/columns.yaml
+    view:
+        list: $/nith/sponsered/models/sponseredpro/columns.yaml
+        toolbarButtons: create|delete|add
+        showSearch: true
+        showCheckboxes: true
+activities:
+    label: Student Activities
+    manage:
+        form: $/nith/deptstuact/models/deptactivity/fields.yaml
+        list: $/nith/deptstuact/models/deptactivity/columns.yaml
+    view:
+        list: $/nith/deptstuact/models/deptactivity/columns.yaml
+        toolbarButtons: create|delete|add
+        showSearch: true
+        showCheckboxes: true
+ups:
+    label: Upcoming Events
+    manage:
+        form: $/nith/deptup/models/up/fields.yaml
+        list: $/nith/deptup/models/up/columns.yaml
+    view:
+        list: $/nith/deptup/models/up/columns.yaml
+        toolbarButtons: create|delete|add
+        showSearch: true
+        showCheckboxes: true
+notices:
+    label: Notices
+    manage:
+        form: $/nith/deptnotices/models/dnotice/fields.yaml
+        list: $/nith/deptnotices/models/dnotice/columns.yaml
+    view:
+        list: $/nith/deptnotices/models/dnotice/columns.yaml
+        toolbarButtons: create|delete|add
+        showSearch: true
+        showCheckboxes: true
+events:
+    label: Events Attended
+    manage:
+        form: $/nith/deptevent/models/deptevent/fields.yaml
+        list: $/nith/deptevent/models/deptevent/columns.yaml
+    view:
+        list: $/nith/deptevent/models/deptevent/columns.yaml
+        toolbarButtons: create|delete|add
+        showSearch: true
+        showCheckboxes: true
+galleries:
+    label: Gallery
+    manage:
+        form: $/nith/dgallery/models/dgallery/fields.yaml
+        list: $/nith/dgallery/models/dgallery/columns.yaml
+    view:
+        list: $/nith/dgallery/models/dgallery/columns.yaml
+        toolbarButtons: create|delete
+        showSearch: true
+        showCheckboxes: true
+dept_detail:
+    label: Dept Details
+    view:
+        form: $/nith/deptdetails/models/deptdetail/fields.yaml
+        toolbarButtons: update|delete
+    manage:
+        form: $/nith/deptdetails/models/deptdetail/fields.yaml
+        list: $/nith/deptdetails/models/deptdetail/columns.yaml

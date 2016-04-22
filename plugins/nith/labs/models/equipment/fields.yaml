@@ -1,0 +1,23 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+      label: ID
+      disabled: true
+    name:
+      label: Name
+      required: true
+    quantity:
+      label: Quantity
+      required: true
+      span: left
+    grant:
+      label: Grant
+    lab:
+      label: Laboratory
+      type: recordfinder
+      list: $/nith/labs/models/lab/columns.yaml
+      prompt: Click the %s button to find a user
+      nameFrom: name

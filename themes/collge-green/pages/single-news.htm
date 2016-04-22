@@ -1,0 +1,47 @@
+title = "News"
+url = "/news/:id"
+layout = "with-sidebar"
+description = "For delivering the content of a news based on ID"
+is_hidden = 0
+==
+
+use NITH\News\Models\NewsItem;
+
+function onStart() {
+    $id = $this->param('id');
+    $news = NewsItem::find($id);
+
+    if (!$news) {
+        return Redirect::to('/404');
+    }
+
+    if ($news->doc) {
+        return Redirect::to($news->doc->getPath());
+    } else if ($news->link) {
+
+        if ($news->link[0] == '/') {
+            return Redirect::to($news->link);
+        }
+
+        $url = parse_url($news->link);
+        if (!isset($url->scheme)) {
+            return Redirect::to('//'.$news->link);
+        }
+
+        return Redirect::to($news->link);
+
+    } else {
+        $this['title'] = 'News';
+        $this['subtitle'] = $news->title;
+        $this['content'] = $news->content ? $news->content : 'Nothing To See Here';
+        $this->addCss('assets/css/generated.css');
+    }
+
+}
+
+
+==
+
+<div class="generated">
+    {{ content | raw }}
+</div>

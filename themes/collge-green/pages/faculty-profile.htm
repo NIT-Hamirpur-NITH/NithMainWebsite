@@ -1,0 +1,39 @@
+
+title = "Faculty Profile"
+url = "/fac/:id"
+layout = "faculty"
+description = "Display the profile of a single faculty"
+is_hidden = 0
+==
+<?php
+use NITH\Faculties\Models\Faculty;
+
+
+function onStart() {
+	$id = $this->param('id');
+	$faculty = Faculty::find($id);
+
+	if (!$faculty) {
+		return Redirect::to('/404');
+	}
+
+	$this['active'] = 'about';
+	$this['navtitle'] = 'About';
+
+}
+?>
+==
+
+<div class="row">
+	<div class="col-xs-12">
+		<h1 class="navtitle"> {{ navtitle }} </h1>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+  	<section>
+    	{{ fac.about | raw }}
+    </section>
+  </div>
+</div>

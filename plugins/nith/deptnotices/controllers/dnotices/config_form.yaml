@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: D Notice
+
+# Model Form Field configuration
+form: $/nith/deptnotices/models/dnotice/fields.yaml
+
+# Model Class name
+modelClass: NITH\DeptNotices\Models\DNotice
+
+# Default redirect location
+defaultRedirect: nith/deptnotices/dnotices
+
+# Create page
+create:
+    title: Create D Notice
+    redirect: nith/deptnotices/dnotices/update/:id
+    redirectClose: nith/deptnotices/dnotices
+
+# Update page
+update:
+    title: Edit D Notice
+    redirect: nith/deptnotices/dnotices
+    redirectClose: nith/deptnotices/dnotices
+
+# Preview page
+preview:
+    title: Preview D Notice

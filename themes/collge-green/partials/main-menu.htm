@@ -1,0 +1,26 @@
+description = "Main Menu"
+
+[staticMenu]
+code = "home"
+
+[viewBag]
+==
+<nav class="main-nav" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button><!--//nav-toggle-->
+        </div><!--//navbar-header-->
+        <div class="navbar-collapse collapse" id="navbar-collapse">
+            {% if staticMenu.menuItems %}
+                <ul class="nav navbar-nav">
+                    {% partial 'menu-items' items=staticMenu.menuItems %}
+                </ul>
+            {% endif %}
+        </div><!--//navabr-collapse-->
+    </div><!--//container-->
+</nav>

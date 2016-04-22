@@ -1,0 +1,52 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+profile:
+    label: Profile
+    manage:
+        form: $/nith/profiles/models/profile/fields.yaml
+        list: $/nith/profiles/models/profile/columns.yaml
+    view:
+        form: $/nith/profiles/models/profile/fields.yaml
+        toolbarButtons: link|unlink|create
+researches:
+    label: Researches
+    manage:
+        form: $/nith/research/models/research/fields.yaml
+        list: $/nith/research/models/research/columns.yaml
+    view:
+        list: $/nith/research/models/research/columns.yaml
+        toolbarButtons: add|create|delete
+conferences:
+    label: Conferences
+    manage:
+        form: $/nith/conference/models/conference/fields.yaml
+        list: $/nith/conference/models/conference/columns.yaml
+    view:
+        list: $/nith/conference/models/conference/columns.yaml
+        toolbarButtons: add|create|delete
+awards:
+    label: Awards
+    manage:
+        form: $/nith/awards/models/award/fields.yaml
+        list: $/nith/awards/models/award/columns.yaml
+    view:
+        list: $/nith/awards/models/award/columns.yaml
+        toolbarButtons: create|delete
+menus:
+    label: Extra Menus
+    manage:
+        form: $/nith/facmenus/models/facmenu/fields.yaml
+        list: $/nith/facmenus/models/facmenu/columns.yaml
+    view:
+        list: $/nith/facmenus/models/facmenu/columns.yaml
+        toolbarButtons: create|delete
+projects:
+    label: Projects
+    manage:
+        form: $/nith/projects/models/project/fields.yaml
+        list: $/nith/projects/models/project/columns.yaml
+    view:
+        list: $/nith/projects/models/project/columns.yaml
+    readOnly: true

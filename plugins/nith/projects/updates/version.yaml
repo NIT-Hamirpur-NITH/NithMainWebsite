@@ -1,0 +1,10 @@
+1.0.1: First version of Projects
+1.0.2:
+  - Create ProjectSession Table
+  - create_project_sessions_table.php
+1.0.3:
+  - Create Projects Table
+  - create_projects_table.php
+1.0.4:
+  - Relate Project to Students
+  - relate_projects_students.php

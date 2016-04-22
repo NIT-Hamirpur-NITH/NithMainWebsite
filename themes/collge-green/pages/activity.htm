@@ -1,0 +1,46 @@
+title = "Activity"
+url = "/activity/:id"
+layout = "with-sidebar"
+description = "Holds a single activity"
+is_hidden = 0
+==
+<?php
+use NITH\Activities\Models\Activity;
+
+function onStart() {
+    $id = $this->param('id');
+    $activity = Activity::find($id);
+
+    if (!$activity) {
+        return Redirect::to('/404');
+    }
+
+    if ($activity->doc) {
+        return Redirect::to($activity->doc->getPath());
+    } else if ($activity->link) {
+
+        if ($activity->link[0] == '/') {
+            return Redirect::to($activity->link);
+        }
+
+        $url = parse_url($activity->link);
+        // return $url;
+        if (!isset($url['scheme'])) {
+            return Redirect::to('//'.$activity->link);
+        }
+
+        return Redirect::to($activity->link);
+
+    } else {
+        $this['title'] = 'Activity';
+        $this['subtitle'] = $activity->title;
+        $this['content'] = $activity->content ? $activity->content : 'Nothing To See Here';
+        $this->addCss('assets/css/generated.css');
+    }
+
+}
+?>
+==
+<div class="generated">
+    {{ content | raw }}
+</div>

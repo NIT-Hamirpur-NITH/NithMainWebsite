@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Dept Detail
+
+# Model Form Field configuration
+form: $/nith/deptdetails/models/deptdetail/fields.yaml
+
+# Model Class name
+modelClass: NITH\DeptDetails\Models\DeptDetail
+
+# Default redirect location
+defaultRedirect: nith/deptdetails/deptdetails
+
+# Create page
+create:
+    title: Create Dept Detail
+    redirect: nith/deptdetails/deptdetails/update/:id
+    redirectClose: nith/deptdetails/deptdetails
+
+# Update page
+update:
+    title: Edit Dept Detail
+    redirect: nith/deptdetails/deptdetails
+    redirectClose: nith/deptdetails/deptdetails
+
+# Preview page
+preview:
+    title: Preview Dept Detail

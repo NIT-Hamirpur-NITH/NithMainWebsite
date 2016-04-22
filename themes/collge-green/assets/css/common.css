@@ -1,0 +1,86 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic,900,900italic);
+@import url(https://fonts.googleapis.com/css?family=Patua+One);
+@import url(https://fonts.googleapis.com/css?family=PT+Serif:400,700);
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+a:focus {
+    outline: none;
+}
+
+
+.top-controls {
+  padding: 0px 0px;
+}
+
+.top-controls > div > div {
+  margin: 3px 0px;
+}
+
+#font-sizes > div > div, #languages, .main-search > div > div {
+  padding: 0px;
+}
+
+
+div.header-main.container {
+    padding: 5px 0;
+    margin-top: 10px;
+}
+
+section h1.section-heading {
+  font-family: Patua One, Times New Roman, sans-serif;
+  font-weight: bold;
+}
+
+/**
+ * Panel with navs
+ */
+
+ .panel.with-nav-tabs .panel-heading{
+     padding: 5px 5px 0 5px;
+ }
+ .panel.with-nav-tabs .nav-tabs{
+ 	border-bottom: none;
+ }
+ .panel.with-nav-tabs .nav-justified{
+ 	margin-bottom: -1px;
+ }
+
+/**
+ * Footer
+ */
+
+.footer .footer-content .footer-col-inner {
+  font-family: Lato, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.footer .footer-content .footer-col-inner h3 {
+  font-family: Patua One, sans-serif;
+  font-size: 1.5em;
+}
+
+.footer .bottom-bar {
+  font-family: Lato, sans-serif;
+}
+
+.footer .bottom-bar .social li a {
+  color: white;
+}
+
+/**
+ * Gallery Photos
+ */
+
+.lightphoto a img {
+  padding: 3px;
+  border: 1px solid #DDD;
+  border-radius: 3px;
+  margin-bottom: 20px;
+  transform: scale3d(1, 1, 1);
+  transition: transform 0.15s ease 0s;
+  width: 100%;
+}

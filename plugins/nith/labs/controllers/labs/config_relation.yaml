@@ -1,0 +1,14 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+equipments:
+    label: Equipments
+    manage:
+        form: $/nith/labs/models/equipment/fields.yaml
+        list: $/nith/labs/models/equipment/columns.yaml
+    view:
+        list: $/nith/labs/models/equipment/columns.yaml
+        toolbarButtons: create|delete
+        showSearch: true
+        showCheckboxes: true

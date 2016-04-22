@@ -1,0 +1,46 @@
+title = "Facutly Research"
+url = "/fac/:id/research"
+layout = "faculty"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['active'] = 'research';
+	$this['coll_papers'] = $this['fac']->researches->groupBy('year')->sortByDesc('year');
+}
+
+==
+
+<div class="row">
+	<div class="col-xs-12">
+		<h1 class="navtitle"> Research </h1>
+	</div>
+
+	<div class="col-xs-12">
+		{% for year, papers in coll_papers %}
+		<div class="row rpapers-row">
+			<div class="col-xs-12">
+				<button class="btn btn-block btn-theme btn-sm" data-toggle="collapse" data-target="#{{ year }}"> 
+					<i class="fa fa-calendar-o"></i>
+					{{ year }}	
+				</button>
+			</div>
+			<div class="col-xs-12">
+				<div id="{{ year }}" class="collapse {{ (loop.index == 1) ? 'in' : '' }}">
+		    		<ul class="rpapers list-unstyled">
+						{% for paper in papers %}
+						<li>
+							<h3> <i class="fa fa-star"></i> {{ paper.title }} </h3>
+							<p> <strong> By: </strong> &nbsp; {{ paper.by }} </p>
+							<p> <strong> Published in: </strong>  &nbsp; {{ paper.in }} </p>
+						</li>
+						{% endfor %}
+					</ul>
+		    	</div>		
+			</div>
+		</div>
+		{% endfor %}
+	</div>
+
+</div>
+

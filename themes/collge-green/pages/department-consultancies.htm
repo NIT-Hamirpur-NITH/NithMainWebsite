@@ -1,0 +1,43 @@
+title = "Department Consultancy Project"
+url = "/dept/:perma/consultancies"
+layout = "department"
+description = "Cosultancy given by Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['consultancies'] = $this['dept']->consultancies;
+	$this['navtitle'] = 'Consultancies';
+	$this['active'] = 'consultancy';
+}
+
+==
+
+<div class="table-responsive consultancies">
+	<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>S.No.</th>
+			<th>Work</th>
+			<th>Duration</th>
+			<th>Amount Received (in Rs.)</th>
+			<th>Source</th>
+			<th>Status</th>
+			<th>Faculties</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for cons in consultancies %}
+			<tr>
+				<td> {{ loop.index }} </td>
+				<td> {{ cons.name }} </td>
+				<td> {{ cons.duration }} </td>
+				<td> {{ cons.amount }} </td>
+				<td> {{ cons.source }} </td>
+				<td> {{ (cons.status == 0) ? 'In Progress' ? 'Completed' }} </td>
+				<td> {{ cons.faculties }} </td>
+			</tr>
+		{% endfor %}
+	</tbody>
+	</table>
+</div>

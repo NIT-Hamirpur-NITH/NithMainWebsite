@@ -1,0 +1,43 @@
+title = "Menu Header for Department"
+url = "/dept/:perma/h/:id"
+layout = "department"
+description = "For content of menu header of department"
+is_hidden = 0
+==
+
+function onStart() {
+    $id = $this->param('id');
+    $activity = $this['dept']->menus()->find($id);
+   
+
+    if (!$activity) {
+        return Redirect::to('/404');
+    }
+
+    if ($activity->doc) {
+        return Redirect::to($activity->doc->getPath());
+    } else if ($activity->link) {
+
+        if ($activity->link == '/') {
+            return Redirect::to($activity->link);
+        }
+
+        $url = parse_url($activity->link);
+        // return $url;
+        if (!isset($url['scheme'])) {
+            return Redirect::to('//'.$activity->link);
+        }
+
+        return Redirect::to($activity->link);
+
+    } else {
+        $this['navtitle'] = $activity->title;
+        $this['content'] = $activity->content ? $activity->content : 'Nothing To See Here';
+    }
+
+}
+
+==
+<div>
+    {{ content | raw }}
+</div>

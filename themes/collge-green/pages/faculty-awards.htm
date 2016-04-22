@@ -1,0 +1,31 @@
+title = "Facutly Awards"
+url = "/fac/:id/awards"
+layout = "faculty"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['active'] = 'awards';
+	$this['awards'] = $this['fac']->awards;
+}
+
+==
+
+<div class="row">
+	<div class="col-xs-12">
+		<h1 class="navtitle"> Awards </h1>
+	</div>
+
+	<div class="col-xs-12">
+		<ul class="list-unstyled awards">
+		{% for award in awards %}
+			<li>
+				<i class="fa fa-star"></i>
+				<span>{{ award.title }}</span>
+			</li>
+		{% endfor %}
+		</ul>
+	</div>
+
+</div>
+

@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+      label: ID
+      disabled: true
+    carousel:
+      label: Carousel
+      type: recordfinder
+      list: $/mohsin/carousel/models/carousel/columns.yaml
+      prompt: Click the %s button the gallery
+      nameFrom: name
+    department:
+      label: Department
+      type: relation
+      nameFrom: name
+    ismain:
+      label: Main Gallery For Department
+      type: switch
+      default: 0

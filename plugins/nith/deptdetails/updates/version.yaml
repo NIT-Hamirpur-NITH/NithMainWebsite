@@ -1,0 +1,4 @@
+1.0.1: First version of DeptDetails
+1.0.2:
+  - Create DeptDetails table
+  - create_dept_details_table.php

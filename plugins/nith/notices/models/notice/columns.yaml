@@ -1,0 +1,24 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+    title:
+        label: Title
+        searchable: true
+    updated_at:
+        label: Updated
+        type: datetime
+    type:
+        label: Section
+        type: partial
+        path: ~/plugins/nith/notices/models/notice/content_section.htm
+    archive:
+        label: Archived
+        type: switch
+    isnew:
+        label: New
+        type: switch

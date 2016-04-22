@@ -1,0 +1,41 @@
+.faculties > div {
+  border: 0px;
+}
+
+.nav.nav-tabs.tabs-left li {
+  border: 0px;
+  border-radius: 0px;
+}
+
+.nav.nav-tabs.tabs-left li a {
+  color: white;
+  border: 0px;
+  border-radius: 3px;
+  font-family: Lato, Arial, sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  background-color: #57a89a;
+}
+
+.nav.nav-tabs.tabs-left li.active a {
+  color: #57a89a;
+  background: white;
+  border-radius: 3px;
+  font-style: italic;
+  border: 1px solid #57a89a;
+}
+
+
+.tab-content {
+  border: 0px;
+  padding-top: 0px;
+  margin-top: 0px;
+}
+
+.tab-content .tab-pane h2 {
+  font-family: Patua One, Times New Roman, sans-serif;
+  margin-bottom: 10px;
+  padding-bottom: 20px;
+  margin-top: 0px;
+  border-bottom: 1px solid lightgray;
+}

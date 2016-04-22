@@ -1,0 +1,16 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+      label: ID
+      searchable: true
+    title:
+      label: Title
+      searchable: true
+    department:
+      label: Deparment
+      searchable: true
+      relation: department
+      select: name

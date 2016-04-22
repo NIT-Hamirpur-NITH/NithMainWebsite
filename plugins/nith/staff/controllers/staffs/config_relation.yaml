@@ -1,0 +1,12 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+profile:
+    label: Profile
+    manage:
+        form: $/nith/profiles/models/profile/fields.yaml
+        list: $/nith/profiles/models/profile/columns.yaml
+    view:
+        form: $/nith/profiles/models/profile/fields.yaml
+        toolbarButtons: link|unlink|create

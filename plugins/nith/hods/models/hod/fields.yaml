@@ -1,0 +1,24 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+  id:
+    label: ID
+    disabled: true
+  department:
+    label: Department
+    type: relation
+    nameFrom: name
+    span: left
+  faculty:
+    label: Faculty
+    type: recordfinder
+    list: $/nith/faculties/models/faculty/columns.yaml
+    prompt: Click the %s button to find a user
+    nameFrom: id
+    span: right
+  message:
+    label: Message
+    type: richeditor
+    size: huge

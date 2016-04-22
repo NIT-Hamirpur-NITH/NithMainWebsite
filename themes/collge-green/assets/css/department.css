@@ -1,0 +1,530 @@
+.page-wrapper .page-heading h1.heading-title {
+  font-family: Patua One, Times New Roman, serif;
+  color: #555;
+}
+
+.popover-title {
+     font-family: Patua One, Times New Roman, serif;
+     font-size: 15px;
+ }
+ .popover-content {
+     font-size: 12px;
+     font-family: Lato, Arial, sans-serif;
+ }
+
+
+/**
+ * Tables
+ */
+.dept-staff.table-responsive th, .students .table-responsive th,
+.hide-content.table-responsive th, .consultancies.table-responsive th  {
+  background-color: #3e6a8f;
+  color: white;
+  border: 1px solid #6091ba;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+.dept-staff.table-responsive td, .nith .table-responsive td,
+.hide-content.table-responsive td, .consultancies.table-responsive td {
+  border: 1px solid #CCC;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+
+/**
+ * Buttons
+ */
+.rpapers-row button, .hide-title button {
+  text-align: left;
+  font-family: Patua One, Times New Romam, serif;
+  font-size: 16px;
+  margin: 0px;
+}
+
+.rpapers-row .btn:active, .rpapers-row .btn:focus, .hide-title button.btn:active, .hide-title button.btn:focus {
+  color: #FFF;
+  outline: 0;
+}
+
+
+/**
+ * Header
+ */
+.dept-header {
+  font-family: PT Serif, Times New Roman, serif;
+  font-weight: bold;
+  font-size: 30px;
+  margin-top: 8px;
+}
+
+@media (min-width: 767px) and (max-width: 985px) {
+  .dept-header {
+    font-size: 20px;
+    margin-top: 5px;
+  }  
+}
+
+@media (min-width: 985px) and (max-width: 1200px) {
+  .dept-header {
+    font-size: 26px;
+    margin-top: 8px;
+  }  
+}
+
+.logo img {
+  margin-bottom: 10px;
+}
+
+
+/**
+ * Sidenavigation
+ */
+
+div.well.dept-menu .nav .btn.text-left {
+  text-align: left;
+  margin-top: 0px;
+  outline: 0;
+}
+
+div.well.dept-menu {
+  padding: 0px;
+  border: 0px;
+  background: white;
+} 
+
+.dept-menu p.tree-toggle.nav-header {
+  font-size: 14px;
+  font-weight: 700px;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #6091ba;
+  color: white;
+  margin: 0px;
+}
+
+.dept-menu p.tree-toggle.nav-header:hover {
+  background-color: #4678a1;
+}
+
+.dept-menu .nav.nav-list.tree {
+  display: none;
+}
+
+.dept-menu p.tree-toggle.nav-header .fa { 
+  color: white;
+  margin-left: 10px;
+}
+
+.dept-menu .nav.nav-list.tree > li a {
+  margin: 0px;
+  background-color: #4678a1;
+  color: white;
+  padding-left: 20px;
+  border-bottom: 1px solid #3e6a8f;
+}
+
+.dept-menu .nav.nav-list.tree > li.active a {
+  margin: 0px;
+  background-color: #3e6a8f;
+  color: white;
+  padding-left: 20px;
+  border-bottom: 1px solid #3e6a8f;
+}
+
+.dept-menu .nav-list-top > li a.single-header {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 700px;
+  padding-left: 10px;
+}
+
+.dept-menu .nav-list-top > li a.single-header:hover {
+  background-color: #4678a1;
+}
+
+h1.navtitle {
+  font-family: Patua One, Times New Roman, serif;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+h1.navtitle a {
+  font-style: Lato, Arial, sans-serif;
+  font-weight: 400;
+}
+
+section {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 15px;
+}
+
+section p {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 15px;
+}
+
+.rpapers {
+  padding: 10px 0px 20px 20px;
+}
+
+.page-wrapper .page-content .rpapers li h3 {
+  font-family: PT Serif, Times New Roman, serif;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 1px;
+  font-weight: 700;
+}
+
+.rpapers li p {
+  margin: 0px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.awards li {
+  font-family: PT Serif, Times New Roman, sans-serif;
+  font-size: 16px;
+}
+
+.modal-body p.contact {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+section.dept-content div.section-heading h3 {
+  font-family: Patua One, Times New Roman, serif;
+  font-size: 22px;
+  color: #333;
+  margin-top: 0px;
+  padding-top: 0px;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+section.dept-content h3 {
+  font-family: PT Serif, Times New Roman, serif;
+}
+
+section.dept-content .section-body p {
+  font-size: 14px;
+}
+
+section.dept-content .section-body ul li {
+  font-size: 14px;
+}
+
+section.dept-content .section-body ul li a {
+  font-size: 14px;
+}
+
+section.dept-content .section-body a {
+  font-size: 14px;
+}
+
+section.dept-content .hod p {
+}
+
+section.dept-content .hod img {
+  width: 200px;
+  float: right;
+  clear: right;
+  margin: 20px;
+  border: 3px solid #EEE;
+}
+
+section.dept-content .hod p.hod-detail span.name {
+  margin: 0px;
+  margin-top: 20px;
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+/**
+ * Students
+ */
+.students .panel .panel-heading {
+  cursor: pointer;
+}
+
+.students .panel .panel-heading .fa {
+  margin-left: 10px;
+}
+
+.students .panel .years {
+  display: none;
+}
+
+.students .panel .years > h3 {
+  margin: 0px;
+  padding: 10px;
+  background-color: #4678a1;
+  color: white;
+  padding-left: 20px;
+  font-size: 14px;
+  font-family: PT Serif, Times New Roman, serif;  
+  border-bottom: 1px solid #3e6a8f;
+  cursor: pointer;
+}
+
+.students .panel .years > h3 .fa {
+  margin-left: 10px;
+}
+
+.students .panel .years > .table-responsive {
+  display: none;
+}
+
+/**
+ * Staff
+ */
+.staff-image img {
+  border: 2px solid lightgray;
+}
+
+/**
+ * Labs
+ */
+
+.lab-title button .fa {
+  margin-left: 10px;
+}
+
+/**
+ * Activities
+ */
+
+.dept-activity li {
+  padding: 10px;
+  background-color: #F0F4F4;
+}
+
+.dept-activity li h3, .dept-activity li p, .dept-activity li blockquote {
+  padding: 0px;
+  margin: 0px;
+}
+
+.dept-activity > li > a > h3.act-title {
+  font-family: PT Serif, Times New Roman, serif;
+  font-weight: 700;
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
+.dept-activity li blockquote {
+  margin-top: 5px;
+  border-left: 5px solid #DDF;
+  padding-left: 15px;
+}
+
+.dept-activity li p, .dept-activity li blockquote {
+  margin-left: 25px;
+}
+
+/**
+ * Stars
+ */
+
+.dept-attended li {
+  padding: 10px;
+  background-color: #F0F4F4;
+}
+
+.dept-attended li p, .dept-attended li h3 {
+  padding: 0px;
+  margin: 0px;
+}
+
+.dept-attended li small {
+  margin: 0px 5px;
+}
+
+.dept-attended li p.at small {
+  margin-left: 0px;
+}
+
+.dept-attended li p.at, .dept-attended li p.date, .dept-attended li h3 {
+  margin-left: 20px;
+}
+
+.dept-attended li p.attendee {
+  font-size: 16px;
+}
+
+.dept-attended li h3.tit {
+  font-weight: 700;
+  font-family: Lato;
+  font-size: 16px;
+  padding: 2px 0px;
+}
+
+/**
+ * Notice
+ */
+
+.dept-notice.alert {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px;
+  margin: 5px;
+}
+
+/**
+ * Galleries
+ */
+
+.dept-galleries {
+  margin-bottom: 20px;
+}
+
+.dept-galleries > div > a > div > div {
+  padding: 5px;
+  border: 1px solid #DDD;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  transform: scale3d(1, 1, 1);
+  transition: transform 0.15s ease 0s;
+}
+
+.dept-galleries > div > a > div img {
+  width: 100%;
+  height: 100%;
+}
+
+/**
+ * MAIN PAGE - SLIDER and NOTICES
+ */
+
+@media (min-width: 992px) {
+  .department-main .notices ul {
+    overflow: auto;
+  }
+}
+
+@media (min-width: 992px)  and (max-width: : 1199px) {
+  .department-main .flexslider  li > img{
+    height: 250px;
+  }
+
+  .department-main .notices ul {
+    height: 230px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .department-main .flexslider  li > img {
+    height: 275px;
+  }
+
+  .department-main .notices ul {
+    height: 250px;
+  }
+}
+
+.department-main .notices {
+  padding: 0px;
+  background-color: white;
+  padding-bottom: 0px;
+  margin-bottom: 20px;
+}
+
+.department-main .notices ul {
+  margin-bottom: 0px;
+}
+
+.department-main .notices h3.tilte-heading {
+  margin: 0px;
+  padding: 10px;
+  font-family: Patua One, Times New Roman, serif;
+  background-color: #6091ba;
+  color: white;
+  text-align: center;
+  border-bottom: 2px solid white;
+}
+
+
+.department-main .notices ul  li.alert {
+  padding: 10px;
+  font-weight: 700;
+  font-size: 14px;
+  font-family: Lato, Arial, sans-serif;
+  margin: 0px;
+  margin-bottom: 1px;
+  border-radius: 0px;
+}
+
+.department-main .notices footer a {
+  text-align: right;
+}
+
+/**
+ * EVENTS and ACTIVITIES
+ */
+
+ .activities {
+   height: 500px;
+ }
+
+ .events {
+    height: 500px;
+ }
+
+ .activities #activities-carousel {
+   padding-left: 20px;
+ }
+
+.events .carousel-controls {
+  margin: 10px;
+}
+
+#activities-carousel .event-item {
+  border: 0px;
+}
+
+#activities-carousel .event-item .details .title {
+  margin-top: 0px;
+}
+
+#events-carousel .event-item .details .title, #activities-carousel .event-item .details .title {
+  margin-bottom: 10px;
+}
+
+#events-carousel .event-item .details .title a, #activities-carousel .event-item .details .title a {
+  font-family: PT Serif, Times News Roman, serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111;
+}
+
+#events-carousel .event-item .details .title a:hover, #activities-carousel .event-item .details .title a:hover {
+  text-decoration: underline;
+  color: #446;
+}
+
+#events-carousel .event-item .details .event-clamp, #activities-carousel .event-item .details .event-clamp {
+  cursor: help;
+  color: #222;
+}
+
+/**
+ * CONTACT
+ */
+.dept-contact {
+  padding: 5px;
+  background-color: #4678a1;
+  color: white;
+}
+
+.dept-contact p {
+  margin: 0px;
+  margin-bottom: 5px;
+}
+
+.dept-contact p.address {
+  font-weight: 700;
+}

@@ -1,0 +1,52 @@
+title = "Faculty Menu"
+url = "/fac/:id/perma/:permalink"
+layout = "faculty"
+description = "For handling extra menus of faculties"
+is_hidden = 0
+
+==
+function onStart() {
+    $permalink = $this->param('permalink');
+    $page = $this['fac']->menus()->where('permalink', '=', $permalink)->first();
+
+    if (!$page) {
+        return Redirect::to('/404');
+    }
+    
+
+    if ($page->doc) {
+        return Redirect::to($page->doc->getPath());
+    } else if ($page->link) {
+
+        if ($page->link[0] == '/') {
+            return Redirect::to($page->link);
+        }
+
+        $url = parse_url($page->link);
+        if (!isset($url['scheme'])) {
+            return Redirect::to('//'.$page->link);
+        }
+
+        return Redirect::to($page->link);
+
+    } else {
+        $this['navtitle'] = $page->title;
+        $this['active'] = $page->permalink;
+        $this['content'] = $page->content ? $page->content : 'Nothing To See Here';
+    }
+
+}
+==
+
+<div class="row">
+    <div class="col-xs-12">
+        <h1 class="navtitle"> {{ navtitle }} </h1>
+    </div>
+
+    <div class="col-xs-12">
+        <section>
+            {{ content | raw }}
+        </section>
+    </div>
+
+</div>

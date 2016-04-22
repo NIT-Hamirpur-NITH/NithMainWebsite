@@ -1,0 +1,72 @@
+title = "Department Faculty"
+url = "/dept/:perma/faculty"
+layout = "department"
+description = "Faculties of Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['faculties'] = $this['dept']->faculties;
+	$this['navtitle'] = 'Faculties';
+	$this['active'] = 'faculty';
+	$this->addCss('assets/css/rotating-card.css');
+	$this->addJs('assets/js/card.js');
+}
+
+==
+
+{% for faculty in faculties %}
+<div class="col-md-4 col-sm-6">
+	<div class="card-container manual-flip">
+		<div class="card">
+			<div class="front">
+				<div class="cover">
+					<img src="{{ ('assets/images/cardcover' ~ loop.index%3 ~ '.png') | theme }}"/>
+				</div>
+				<div class="user">
+					<img class="img-circle" src="{{ faculty.profile.profile_image.path }}"/>
+				</div>
+				<div class="content">
+					<div class="main">
+						<div class="name">
+							<a href="/fac/{{ faculty.id }}" title="{{ faculty.profile.name }}"> {{ faculty.profile.name }} </a>
+						</div>
+						<p class="profession">{{ faculty.designation }}</p>
+						<p class="contact"><i class="fa fa-phone fa-fw text-muted"></i>
+							{% if faculty.profile.phone_office %} <i>Office:</i> {{ faculty.profile.phone_office }} {% endif %}
+							{% if faculty.profile.phone_residence %} | <i>Residence:</i> {{ faculty.profile.phone_residence }} {% endif %}
+						</p>
+						{% if faculty.profile.fax %}
+						<p class="contact"><i class="fa fa-fax fa-fw text-muted"></i> {{ faculty.profile.fax }} </p>
+						{% endif %}
+						{% if faculty.profile.email %}
+							<p class="contact"><i class="fa fa-envelope-o fa-fw text-muted"></i> {{ faculty.profile.email }} </p>
+						{% endif %}
+					</div>
+					<div class="footer-card">
+						<button class="btn btn-link btn-sm" onclick="rotateCard(this)">
+							<i class="fa fa-mail-forward" style="color: royalblue"></i> More Info
+						</button>
+					</div>
+				</div>
+			</div> <!-- end front panel -->
+			<div class="back">
+				<div class="header">
+					<h5 class="motto">{{ faculty.profile.qualification }}</h5>
+				</div>
+				<div class="content">
+					<div class="main">
+						<h4 class="text-center">Areas of Expertise</h4>
+						<p>{{ faculty.specialization }}</p>
+					</div>
+				</div>
+				<div class="footer-card">
+					<button class="btn btn-link btn-sm" rel="tooltip" title="Flip Card" onclick="rotateCard(this)">
+						<i class="fa fa-reply" style="color: royalblue"></i> Back
+					</button>
+				</div>
+			</div> <!-- end back panel -->
+		</div> <!-- end card -->
+	</div> <!-- end card-container -->
+</div>
+{% endfor %}

@@ -1,0 +1,48 @@
+title = "Event"
+url = "/event/:id"
+layout = "with-sidebar"
+description = "For delivering the content of a event based on ID"
+is_hidden = 0
+==
+
+use NITH\Events\Models\Event;
+
+function onStart() {
+    $id = $this->param('id');
+    $event = Event::find($id);
+
+    if (!$event) {
+        return Redirect::to('/404');
+    }
+
+    if ($event->doc) {
+        return Redirect::to($event->doc->getPath());
+    } else if ($event->link) {
+
+        if ($event->link[0] == '/') {
+            return Redirect::to($event->link);
+        }
+
+        $url = parse_url($event->link);
+        // return $url;
+        if (!isset($url['scheme'])) {
+            return Redirect::to('//'.$event->link);
+        }
+
+        return Redirect::to($event->link);
+
+    } else {
+        $this['title'] = 'Event';
+        $this['subtitle'] = $event->title;
+        $this['content'] = $event->content ? $event->content : 'Nothing To See Here';
+        $this->addCss('assets/css/generated.css');
+    }
+
+}
+
+
+==
+
+<div class="generated">
+    {{ content | raw }}
+</div>

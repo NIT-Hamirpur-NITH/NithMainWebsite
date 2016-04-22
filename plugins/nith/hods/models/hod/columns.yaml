@@ -1,0 +1,17 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+  id:
+    label: ID
+    searchable: true
+  department:
+    label: Department
+    type: relation
+    nameFrom: name
+  faculty:
+    label: Faculty
+    type: partial
+    partial: ~/plugins/nith/hods/models/hod/content_faculty.htm
+

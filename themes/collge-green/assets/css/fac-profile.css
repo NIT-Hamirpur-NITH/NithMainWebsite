@@ -1,0 +1,134 @@
+
+.profile {
+  background-color: #ecf0f1;
+  /*border: 1px solid #555;*/
+  /*border-radius: 10px 10px 0px 0px;*/
+}
+
+.intro {
+  padding: 5px;
+  margin: 0px 1px;
+}
+
+.intro img {
+  border: 3px solid white;
+  margin-top: 10px;
+}
+
+.intro .details {
+  margin-top: 10px;
+}
+
+.intro p {
+  margin-bottom: 5px;
+  font-family: Lato, Arial, sans-serif;
+}
+
+.intro p.dept {
+  text-align: center;
+  font-size: 16px;
+  margin-bottom: 15px;
+  line-height: 1em;
+}
+
+.intro p.designation {
+   font-size: 18px;
+   text-align: center;
+   margin-bottom: 0px;
+   font-weight: 700;
+}
+
+/* make sidebar nav vertical */ 
+@media (min-width: 768px) {
+  
+  .sidebar-nav .navbar .navbar-collapse {
+    padding: 0;
+    max-height: none;
+  }
+  .sidebar-nav .navbar ul {
+    float: none;
+  }
+  .sidebar-nav .navbar ul:not {
+    display: block;
+  }
+  .sidebar-nav .navbar li {
+    float: none;
+    display: block;
+  }
+}
+
+.sidebar-nav .navbar li a {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  color: white;
+  background-color: #6091ba;
+  border-bottom: 1px solid #71A2CB;
+  font-family: Lato, Arial, sans-serif;
+}
+
+.sidebar-nav .navbar li.active a {
+  background-color: #2f506c;
+  border-bottom: 1px solid #71A2CB;
+  font-weight: bold;
+}
+
+h1.navtitle {
+  font-family: Patua One, Times New Roman, serif;
+  font-size: 20px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+h1.navtitle a {
+  font-style: Lato, Arial, sans-serif;
+  font-weight: 400;
+}
+
+section {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 15px;
+}
+
+section p {
+  font-family: Lato, Arial, sans-serif;
+  font-size: 15px;
+}
+
+.rpapers-row button {
+  text-align: left;
+  font-family: Patua One, Times New Romam, serif;
+  font-size: 16px;
+  margin: 0px;
+}
+
+.rpapers-row .btn:active, .rpapers-row .btn:focus {
+  color: #CCC;
+}
+
+.rpapers {
+  padding: 10px 0px 20px 20px;
+}
+
+.page-wrapper .page-content .rpapers li h3 {
+  font-family: PT Serif, Times New Roman, serif;
+  font-size: 16px;
+  margin-top: 15px;
+  margin-bottom: 1px;
+  font-weight: 700;
+}
+
+.rpapers li p {
+  margin: 0px;
+  margin-left: 20px;
+  font-size: 14px;
+}
+
+.awards li {
+  font-family: PT Serif, Times New Roman, sans-serif;
+  font-size: 16px;
+}
+
+.modal-body p.contact {
+  font-size: 16px;
+  font-weight: 700;
+}

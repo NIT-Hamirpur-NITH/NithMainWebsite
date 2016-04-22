@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Project Session
+
+# Model Form Field configuration
+form: $/nith/projects/models/projectsession/fields.yaml
+
+# Model Class name
+modelClass: NITH\Projects\Models\ProjectSession
+
+# Default redirect location
+defaultRedirect: nith/projects/projectsessions
+
+# Create page
+create:
+    title: Create Project Session
+    redirect: nith/projects/projectsessions/update/:id
+    redirectClose: nith/projects/projectsessions
+
+# Update page
+update:
+    title: Edit Project Session
+    redirect: nith/projects/projectsessions
+    redirectClose: nith/projects/projectsessions
+
+# Preview page
+preview:
+    title: Preview Project Session

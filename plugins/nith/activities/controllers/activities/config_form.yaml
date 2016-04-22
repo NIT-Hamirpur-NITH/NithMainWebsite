@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Activity
+
+# Model Form Field configuration
+form: $/nith/activities/models/activity/fields.yaml
+
+# Model Class name
+modelClass: NITH\Activities\Models\Activity
+
+# Default redirect location
+defaultRedirect: nith/activities/activities
+
+# Create page
+create:
+    title: Create Activity
+    redirect: nith/activities/activities/update/:id
+    redirectClose: nith/activities/activities
+
+# Update page
+update:
+    title: Edit Activity
+    redirect: nith/activities/activities
+    redirectClose: nith/activities/activities
+
+# Preview page
+preview:
+    title: Preview Activity

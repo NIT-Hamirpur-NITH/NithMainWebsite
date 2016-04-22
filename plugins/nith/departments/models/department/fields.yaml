@@ -1,0 +1,118 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        # tab: Basic
+        id:
+            label: ID
+            disabled: true
+            tab: Basic
+        name:
+            label: Name
+            comment: Enter the complete name of the Department
+            tab: Basic
+            span: left
+        short_name:
+            label: Short Name
+            comment: Enter a short form of the name
+            tab: Basic
+            span: right
+        type:
+            label: Type
+            type: radio
+            options:
+                0: Department
+                1: Center
+            tab: Basic
+        # tab: Facutlty
+        faculties:
+            label: Faculties
+            type: partial
+            path: field_faculties
+            tab: Faculties
+        # tab: HOD
+        hod:
+            label: HOD
+            type: partial
+            path: field_hod
+            tab: Head
+        # tab: Staff
+        staffs:
+            label: Staff
+            type: partial
+            path: field_staff
+            tab: Staff
+        # tab: Students
+        students:
+            label: Students
+            type: partial
+            path: field_students
+            tab: Students
+        # tab: Labs
+        labs:
+            label: Labs
+            type: partial
+            path: field_labs
+            tab: Labs
+        # tab: Consultancies
+        consultancies:
+            label: Consultancies
+            type: partial
+            path: field_consultancies
+            tab: Consultancies
+        # tab: Consultancies
+        sponsered_pros:
+            label: Sponsered Projects
+            type: partial
+            path: field_sponsered
+            tab: Sponsered
+        # tab: Projects
+        project_sessions:
+            label: Projects
+            type: partial
+            path: field_projectsessions
+            tab: Projects
+        # tab: Activities
+        activities:
+            label: Student Activities
+            type: partial
+            path: field_activities
+            tab: Student Activities
+        # tab: Attended Events
+        events:
+            label: Attended Events
+            type: partial
+            path: field_events
+            tab: Atteded
+        # tab: Upcoming Events
+        ups:
+            label: Upcoming Events
+            type: partial
+            path: field_ups
+            tab: Events
+        # tab: Notices
+        notices:
+            label: Notices
+            type: partial
+            path: field_notices
+            tab: Notices
+        # tab: Gallery
+        galleries:
+            label: Gallery
+            type: partial
+            path: field_galleries
+            tab: Gallery
+        # tab: Menu
+        menus:
+            label: Menus
+            type: partial
+            path: field_menus
+            tab: Menu
+        # tab: Details
+        dept_detail:
+            label: Details
+            type: partial
+            path: field_details
+            tab: Details

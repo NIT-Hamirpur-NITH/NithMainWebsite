@@ -1,0 +1,27 @@
+#notices-table {
+  padding: 10px 0px;
+}
+
+#notices-table thead {
+  background-color: #555;
+}
+
+#notices-table thead tr th {
+  color: white;
+  font-family: PT Serif, serif;
+}
+
+#notices-table tbody tr td a.title {
+  font-family: Lato, Arial, sans-serif;
+  font-weight: 700;
+  color: #448;
+  font-size: 14px;
+}
+
+#notices-table tbody tr td {
+  font-family: Lato, Arial, sans-serif;
+}
+
+#notices-table tbody tr.even {
+  background: #efffef;
+}

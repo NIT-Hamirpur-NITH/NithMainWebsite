@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Staff
+
+# Model Form Field configuration
+form: $/nith/staff/models/staff/fields.yaml
+
+# Model Class name
+modelClass: NITH\Staff\Models\Staff
+
+# Default redirect location
+defaultRedirect: nith/staff/staffs
+
+# Create page
+create:
+    title: Create Staff
+    redirect: nith/staff/staffs/update/:id
+    redirectClose: nith/staff/staffs
+
+# Update page
+update:
+    title: Edit Staff
+    redirect: nith/staff/staffs
+    redirectClose: nith/staff/staffs
+
+# Preview page
+preview:
+    title: Preview Staff

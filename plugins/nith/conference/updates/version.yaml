@@ -1,0 +1,7 @@
+1.0.1: First version of Conference
+1.0.2:
+  - Create Conference Table
+  - create_conferences_table.php
+1.0.3:
+  - Relate Faculty Conference
+  - relate_faculty_conference.php

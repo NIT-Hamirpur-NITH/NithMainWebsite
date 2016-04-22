@@ -1,0 +1,37 @@
+title = "Department Upcoming Events"
+url = "/dept/:perma/events/"
+layout = "department"
+description = "Upcoming Events Orgranined by Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['activities'] = $this['dept']->ups()->orderBy('start_date', 'desc')->paginate(2);
+	$this['navtitle'] = 'Events';
+	$this['active'] = 'upcoming';
+}
+
+==
+
+<ul class="list-unstyled dept-activity">
+    {% for activity in activities %}
+    <li>
+        <a href="/dept/{{ dept.short_name }}/event/{{ activity.id }}">
+            <h3 class="act-title"> <i class="fa fa-star"></i> {{ activity.title }}</h3>
+        </a>
+        <p class="date">
+            <strong> On: </strong> &nbsp;
+            {{ activity.start_date }}
+            {% if activity.end_date %}
+                <small> to </small>
+                {{ activity.end_date }}
+            {% endif %}
+        </p>
+        <blockquote>
+            {{ activity.description }} Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque, suscipit fugit dignissimos dolor quasi omnis odit fugiat aspernatur. Iste, possimus.
+        </blockquote>
+    </li>
+    {% endfor %}
+</ul>
+
+{{ activities.render() | raw }}

@@ -1,0 +1,40 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+    # tab: Basic
+    id:
+      label: ID
+      disabled: true
+      span: left
+      tab: Basic
+    permalink:
+      label: Permalink
+      span: right
+      required: true
+      tab: Basic
+    title:
+      label: Title
+      required: true
+      tab: Basic
+    doc:
+      label: Document
+      type: fileupload
+      mode: file
+      fileTypes: jpg,jpeg,png,gif,pdf,odt,doc,docx,xls,xlsx,ppt,pptx
+      span: left
+      tab: Basic
+    link:
+      label: Link
+      type: text
+      span: right
+      tab: Basic
+    content:
+      tab: Content
+      label: Content
+      size: giant
+      type: richeditor
+
+    

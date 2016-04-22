@@ -1,0 +1,31 @@
+title = "All News"
+url = "/all-news"
+layout = "with-sidebar"
+description = "Paginated view of all news"
+is_hidden = 0
+==
+
+use NITH\News\Models\NewsItem;
+
+function onStart() {
+    $this['title'] = 'All News';
+    $this->addCss('assets/css/news.css');
+    $this['news_items'] = NewsItem::orderBy('updated_at', 'desc')->paginate(2);
+}
+
+==
+
+<div class="news">
+
+    {% for news in news_items %}
+    <div class="row">
+        <h1> {{ news.title }} </h1>
+        <p>
+            {{ news.description }}
+        </p>
+        <a class="btn btn-link pull-right" href="/news/{{ news.id }}"> More </a>
+    </div>
+    {% endfor %}
+
+    {{ news_items.render() | raw }}
+</div>

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Conference
+
+# Model Form Field configuration
+form: $/nith/conference/models/conference/fields.yaml
+
+# Model Class name
+modelClass: NITH\Conference\Models\Conference
+
+# Default redirect location
+defaultRedirect: nith/conference/conferences
+
+# Create page
+create:
+    title: Create Conference
+    redirect: nith/conference/conferences/update/:id
+    redirectClose: nith/conference/conferences
+
+# Update page
+update:
+    title: Edit Conference
+    redirect: nith/conference/conferences
+    redirectClose: nith/conference/conferences
+
+# Preview page
+preview:
+    title: Preview Conference

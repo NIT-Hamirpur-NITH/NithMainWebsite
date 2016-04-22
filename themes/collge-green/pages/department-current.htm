@@ -1,0 +1,16 @@
+title = "Department Current Session"
+url = "/dept/:perma/current-session"
+layout = "department"
+description = "Current Session of Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['current'] = $this['dept']->dept_detail->current_session;
+	$this['navtitle'] = 'Current Session';
+	$this['active'] = 'current';
+}
+
+==
+
+{{ current | raw }}

@@ -1,0 +1,40 @@
+.generated {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+}
+
+.generated p {
+    font-family: Lato, Arial, sans-serif;
+    font-size: 1.2em;
+}
+
+.generated a {
+    font-family: Lato, Arial, sans-serif;
+    color: royalblue;
+    font-size: 1em;
+}
+
+.generated a:hover {
+    font-family: Lato, Arial, sans-serif;
+    color: royalblue;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+
+.generated  i a {
+    font-family: Lato, Arial, sans-serif;
+    color: royalblue;
+    font-size: 1em;
+}
+
+.generated ul li {
+    font-size: 1.2em;
+}
+
+.generated h1, .generated h2, .generated h3, .generated h4 {
+    margin-top: 20px;
+    color: black;
+    font-family: Patua One, Times New Roman, serif;
+    font-weight: 900;
+}

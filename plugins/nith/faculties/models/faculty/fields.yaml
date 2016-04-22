@@ -1,0 +1,75 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+
+tabs:
+    fields:
+        # tab: Basic
+        id:
+            label: ID
+            disabled: true
+            span: left
+            tab: Basic
+        department:
+            label: Department
+            type: relation
+            nameFrom: name
+            span: left
+            tab: Basic
+            required: true
+        designation:
+            label: Designation
+            required: true
+            tab: Basic
+        specialization:
+            label: Specialization
+            required: true
+            tab: Basic
+        # tab: About
+        resume:
+            label: Resume
+            type: fileupload
+            mode: file
+            tab: About
+        about:
+            label: About
+            type: richeditor
+            size: huge
+            tab: About
+        #tab: Research
+        researches:
+            label: Researches
+            type: partial
+            path: field_researches
+            tab: Research
+        #tab: Conference
+        conferences:
+            label: Conferences
+            type: partial
+            path: field_conferences
+            tab: Conference
+        #tab: Awards
+        awards:
+            label: Awards and Honors
+            type: partial
+            path: field_awards
+            tab: Awards
+        #tab: Awards
+        menus:
+            label: Extra Menus
+            type: partial
+            path: field_menus
+            tab: Menus
+        #tab: Projects
+        projects:
+            label: Projects
+            type: partial
+            path: field_projects
+            tab: Projects
+        # tab: Profile
+        profile:
+            label: Profile
+            type: partial
+            path: field_profiles
+            tab: Profile

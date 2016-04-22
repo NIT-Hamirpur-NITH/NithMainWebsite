@@ -1,0 +1,186 @@
+title = "Department"
+url = "/dept/:perma"
+layout = "department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['gallery'] = $this['dept']->galleries()->where('ismain', '=', 1)->first();
+	$this['notices'] = $this['dept']->notices()->where('archive', '=', 0)->orderBy('updated_at', 'desc')->get();
+	$this['events'] = $this['dept']->ups()->where('archive', '=', false)->orderBy('start_date', 'asc')->get();
+	$this['activities'] = $this['dept']->activities()->where('archive', '=', false)->orderBy('start_date', 'asc')->get();
+	$this->addCss('assets/plugins/flexslider/flexslider.css');
+	$this->addJs('assets/plugins/flexslider/jquery.flexslider-min.js');
+	$this->addCss('assets/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.min.css');
+	$this->addJs('assets/bower_components/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js');
+	$this->addJs('assets/js/department.js');
+}
+	
+==
+
+<div class="department-main">
+
+	<!-- SLIDER and NOTICE BOARD -->
+	<div class="row">
+
+		<!-- SLIDER -->
+		<div class="col-xs-12 col-sm-12 col-md-7">
+			<div class="slider flexslider">
+				<ul class="slides">
+					{% for image in gallery.carousel.images %}
+				    <li>
+				        <img src="{{ image.getPath() }}"  alt="{{ image.title }}" />
+				        {% if image.title %}
+				        <p class="flex-caption">
+				            <span class="main" >{{ image.title }}</span>
+				            <br />
+				            <span class="secondary clearfix" >{{ image.description }}</span>
+				        </p>
+				        {% endif %}
+				    </li>
+				    {% endfor %}
+				 </ul>
+			</div>
+		</div>
+		<!-- //SLIDER -->
+
+		<div class="notices col-md-5 col-xs-12 col-sm-12">
+			<h3 class="tilte-heading"> Notice Board </h3>
+			<ul class="list-unstyled">
+				{% for notice in notices %}
+				<a href="/dept/{{ dept.short_name }}/notice/{{ notice.id }}">
+					<li class="alert {{ (notice.isnew) ? 'alert-info' : 'alert-success' }}">
+						{{ notice.title | capitalize }} 
+					</li>
+				</a>
+				{% endfor %}
+			</ul>
+			<footer>
+				<a href="/dept/{{ dept.short_name }}/notices" class="btn btn-block btn-sm btn-info">
+					Archive
+					<i class="fa fa-reply"></i>
+				</a>
+			</footer>
+		</div>
+
+	</div>
+	<!-- //SLIDER and NOTICE BOARD -->
+
+	<!-- EVENTS and ACTIVITIES -->
+	<div class="row">
+		
+		<!-- EVETNS -->
+		<div class="col-md-6 col-sm-12 home-page">
+			<section class="events">
+		        {% if events|length > 3 %}
+		        <div class="carousel-controls pull-right">
+		            <a class="prev" href="#events-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+		            <a class="next" href="#events-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+		        </div><!--//carousel-controls-->
+		        {% endif %}
+		        <h1 class="section-heading text-highlight"><span class="line">Events</span></h1>
+		        <div class="section-content">
+		          <div id="events-carousel" class="events-carousel carousel slide">
+		            <div class="carousel-inner">
+		              {% for i in 0..(((events|length)-1)//3) %}
+		                <div class="{{ (i == 0) ? 'active':'' }} item">
+		                  {% for j in 0..2 %}
+		                    {% if(events[i*3 + j]) %}
+		                    <div class="event-item">
+		                      <p class="date-label">
+		                        <span class="month">{{ events[i*3 + j].getMonth() }}</span>
+		                        <span class="date-number">{{ events[i*3 + j].getDay() }}</span>
+		                      </p>
+		                      <div class="details">
+		                        <h2 class="title">
+		                          <a href="/event/{{ events[i*3 + j].id }}"> {{ events[i*3 + j].title }} </a>
+		                        </h2>
+		                        <p class="time event-clamp" data-toggle="popover" title="{{ events[i*3 + j].title }}" data-content="{{ events[i*3 + j].description }}">
+		                          <i class="fa fa-bars"></i>{{ events[i*3 + j].description }}
+		                        </p>
+		                        <p class="location">
+		                          <i class="fa fa-calendar-o"></i>
+		                          {{ events[i*3 + j].getStartDate() }}
+		                          {% if events[i*3 + j].end_date %}
+		                            <small> to </small> {{ events[i*3 + j].getEndDate() }} </p>
+		                          {% endif %}
+		                      </div><!--//details-->
+		                    </div><!--event-item-->
+		                    {% endif %}
+		                  {% endfor %}
+		                </div><!--//item-->
+		              {% endfor %}
+		            </div>
+		          </div>
+		          <a class="/dept/{{ dept.short_name }}/events" href="events.html">All events<i class="fa fa-chevron-right"></i></a>
+		        </div><!--//section-content-->
+		     </section>
+		</div>
+		<!-- //EVENTS -->
+
+		<!-- ACTIVITIES -->
+		<div class="col-md-6 col-sm-12 home-page">
+			<section class="events activities">
+                {% if activities|length > 3 %}
+                <div class="carousel-controls pull-right">
+                    <a class="prev" href="#activities-carousel" data-slide="prev"><i class="fa fa-caret-left"></i></a>
+                    <a class="next" href="#activities-carousel" data-slide="next"><i class="fa fa-caret-right"></i></a>
+                </div><!--//carousel-controls-->
+                {% endif %}
+                <h1 class="section-heading text-highlight"><span class="line">Activities</span></h1>
+                <div class="section-content">
+                  <div id="activities-carousel" class="activities-carousel carousel slide">
+                    <div class="carousel-inner row">
+                      {% for i in 0..(((activities|length)-1)//2) %}
+                        <div class="{{ (i == 0) ? 'active':'' }} item">
+                          {% for j in 0..2 %}
+                            {% if(activities[i*3 + j]) %}
+                            <div class="event-item">
+                              <p class="date-label">
+                                <span class="month">{{ activities[i*3 + j].getMonth() }}</span>
+                                <span class="date-number">{{ activities[i*3 + j].getDay() }}</span>
+                              </p>
+                              <div class="details">
+                                <h2 class="title">
+                                  <a href="/activity/{{ activities[i*3 + j].id }}"> {{ activities[i*3 + j].title }} </a>
+                                </h2>
+                                <p class="time event-clamp" data-toggle="popover" title="{{ activities[i*3 + j].title }}" data-content="{{ activities[i*3 + j].description }}">
+                                  <i class="fa fa-bars"></i>{{ activities[i*3 + j].description }}
+                                </p>
+                                <p class="location">
+                                  <i class="fa fa-calendar-o"></i>
+                                  {{ activities[i*3 + j].getStartDate() }}
+                                  {% if activities[i*3 + j].end_date %}
+                                    <small> to </small> {{ activities[i*3 + j].getEndDate() }} </p>
+                                  {% endif %}
+                              </div><!--//details-->
+                            </div><!--event-item-->
+                            {% endif %}
+                          {% endfor %}
+                        </div><!--//item-->
+                      {% endfor %}
+                    </div>
+                  </div>
+                  <a class="read-more" href="/dept/{{ dept.short_name }}/activities">All activities<i class="fa fa-chevron-right"></i></a>
+                </div><!--//section-content-->
+             </section>
+		</div>
+		<!-- //ACTIVITIES -->
+
+		<!-- ABOUT -->
+		<div class="about">
+			<div class="col-xs-12">
+				<section>
+					<h1 class="section-heading text-highlight"><span class="line">About</span></h1>
+					<div class="section-content">
+						{{ dept.dept_detail.about | raw }}
+					</div>
+				</section>
+			</div>
+		</div>
+		<!-- //ABOUT -->
+
+	</div>
+	<!-- //EVENTS and ACTIVITIES -->
+
+</div>

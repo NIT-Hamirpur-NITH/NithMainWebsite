@@ -1,0 +1,21 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+      id:
+          label: ID
+          disabled: true
+          tab: Basic
+      message:
+          label: Message
+          type: richeditor
+          size: huge
+          tab: Basic
+      profile:
+          label: Profile
+          type: partial
+          path: field_profiles
+          tab: Profile
+      

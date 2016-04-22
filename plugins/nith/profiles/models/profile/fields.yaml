@@ -1,0 +1,42 @@
+tabs:
+    fields:
+        # tab: Basic
+        id:
+            label: ID
+            disabled: true
+            span: left
+            tab: Basic
+        name:
+            label: Name
+            required: true
+            tab: Basic
+            span: right
+        profile_image:
+            type: fileupload
+            mode: image
+            label: Profile Image
+            tab: Basic
+            imageHeight: 260
+            imageWidth: 260
+        qualification:
+            label: Qualification
+            required: true
+            tab: Basic
+        # tab: Contact
+        phone_office:
+            label: Phone Office
+            tab: Contact
+            span: left
+        phone_residence:
+            label: Phone Residence
+            span: right
+            tab: Contact
+        fax:
+            label: Fax
+            tab: Contact
+        email:
+            label: Email
+            tab: Contact
+        website:
+            label: Website
+            tab: Contact

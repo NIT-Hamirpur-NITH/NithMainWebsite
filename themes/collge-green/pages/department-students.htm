@@ -1,0 +1,53 @@
+title = "Department Students"
+url = "/dept/:perma/students"
+layout = "department"
+description = "Students of Department"
+is_hidden = 0
+==
+
+use NITH\Students\Models\Student;
+
+function onStart() {
+	$students = $this['dept']->students->groupBy('program')->toArray();
+	$newStudents = [];
+	foreach($students as $program => $stus) {
+		$newStudents[Student::$programs[$program]] = collect($stus)->groupBy(function($item, $key) {
+			return Student::$years[$item['year']];
+		})->toArray();
+	}
+	$this['students'] = collect($newStudents);
+	$this['navtitle'] = 'Students';
+	$this['active'] = 'student';
+}
+
+==
+<div class="students">
+	{% for program, ye in students %}
+	<div class="panel panel-theme">
+	    <div class="panel-heading">{{ program }} <i class="fa fa-caret-right"></i></div>
+	    {% for year, stus in ye %}
+	    <div class="years">
+	        <h3> {{ year }} <i class="fa fa-caret-right"></i></h3>
+	        <div class="table-responsive">   
+	            <table class="table">
+	                <thead>
+	                    <tr>
+	                        <th> Roll Number </th>
+	                        <th> Name </th>
+	                    </tr>
+	                </thead>
+	                <tbody>
+	                	{% for student in stus %}
+	                    <tr>
+	                        <td>{{ student.roll_number }}</td>
+	                        <td>{{ student.name }}</td>
+	                    </tr>
+	                   	{% endfor %}
+	                </tbody>
+	            </table><!--//table-->
+	        </div><!--//table-responsive-->
+	    </div>
+		{% endfor %}
+	</div>
+	{% endfor %}
+</div>

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Director
+
+# Model Form Field configuration
+form: $/nith/director/models/director/fields.yaml
+
+# Model Class name
+modelClass: NITH\Director\Models\Director
+
+# Default redirect location
+defaultRedirect: nith/director/directors
+
+# Create page
+create:
+    title: Create Director
+    redirect: nith/director/directors/update/:id
+    redirectClose: nith/director/directors
+
+# Update page
+update:
+    title: Edit Director
+    redirect: nith/director/directors
+    redirectClose: nith/director/directors
+
+# Preview page
+preview:
+    title: Preview Director

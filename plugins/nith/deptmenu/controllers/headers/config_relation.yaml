@@ -1,0 +1,14 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+items:
+    label: Menu Items
+    manage:
+        form: $/nith/deptmenu/models/item/fields.yaml
+        list: $/nith/deptmenu/models/item/columns.yaml
+    view:
+        list: $/nith/deptmenu/models/item/columns.yaml
+        toolbarButtons: create|delete|add
+        showSearch: true
+        showCheckboxes: true

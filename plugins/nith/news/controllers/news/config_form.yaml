@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: News
+
+# Model Form Field configuration
+form: $/nith/news/models/newsitem/fields.yaml
+
+# Model Class name
+modelClass: NITH\News\Models\NewsItem
+
+# Default redirect location
+defaultRedirect: nith/news/news
+
+# Create page
+create:
+    title: Create News
+    redirect: nith/news/news/update/:id
+    redirectClose: nith/news/news
+
+# Update page
+update:
+    title: Edit News
+    redirect: nith/news/news
+    redirectClose: nith/news/news
+
+# Preview page
+preview:
+    title: Preview News

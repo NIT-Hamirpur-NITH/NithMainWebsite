@@ -1,0 +1,4 @@
+1.0.1: First version of DeptNotices
+1.0.2:
+  - Create DNotices Table
+  - create_d_notices_table.php

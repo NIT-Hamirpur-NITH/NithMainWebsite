@@ -1,0 +1,22 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    id:
+      label: ID
+      disabled: true
+    name:
+      label: Name
+      required: true
+    department:
+      label: Department
+      required: true
+      type: relation
+      nameFrom: name
+    equipments:
+      label: Equipments
+      type: partial
+      path: field_equipments
+
+

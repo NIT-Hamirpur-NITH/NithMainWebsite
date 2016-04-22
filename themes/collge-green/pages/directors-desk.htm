@@ -1,0 +1,29 @@
+title = "Director's Desk"
+url = "/directors-desk"
+layout = "without-sidebar"
+is_hidden = 0
+==
+use NITH\Director\Models\Director;
+
+function onStart() {
+	$this['title'] = "Director's Message";
+	$this['director'] = Director::first();
+	$this->addCss('assets/css/director.css');
+}
+
+==
+
+<div class="director row">
+	<div class="col-md-3 col-md-offset-1 profile_image">
+		<img src="{{ director.profile.profile_image.getPath() }}" alt="{{ director.profile.name }}" class="img-responsive">
+	</div>
+	<div class="col-md-6 col-md-offset-1">
+		<div class="row message">
+			{{ director.message | raw  }}
+		</div>
+		<div class="row regards">
+			<p class="salute"> Best Regards,</p>
+			<p class="name"> {{  director.profile.name }} </p>
+		</div>
+	</div>
+</div>

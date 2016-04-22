@@ -1,0 +1,42 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    defaultTab: Data
+    fields:
+        id:
+            label: ID
+            disabled: true
+            span: left
+        title:
+            label: Title
+            type: text
+            placeholder: Enter the title of the event (limit: 25 chars)
+            required: true
+            span: left
+        header:
+            label: Header
+            type: recordfinder
+            list: $/nith/deptmenu/models/header/columns.yaml
+            prompt: Click the %s button to find a user
+            nameFrom: title
+            span: right
+        link:
+            label: Link
+            type: text
+            span: right
+            placeholder: Use this to link this event to a url
+        doc:
+            label: Document
+            type: fileupload
+            mode: file
+            fileTypes: jpg,jpeg,png,gif,pdf,odt,doc,docx,xls,xlsx,ppt,pptx
+            span: left
+            commentAbove: Add a file to asscociate with this event
+        content:
+            tab: Content
+            label: Content
+            size: giant
+            type: richeditor
+

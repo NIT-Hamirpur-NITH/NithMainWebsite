@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Award
+
+# Model Form Field configuration
+form: $/nith/awards/models/award/fields.yaml
+
+# Model Class name
+modelClass: NITH\Awards\Models\Award
+
+# Default redirect location
+defaultRedirect: nith/awards/awards
+
+# Create page
+create:
+    title: Create Award
+    redirect: nith/awards/awards/update/:id
+    redirectClose: nith/awards/awards
+
+# Update page
+update:
+    title: Edit Award
+    redirect: nith/awards/awards
+    redirectClose: nith/awards/awards
+
+# Preview page
+preview:
+    title: Preview Award

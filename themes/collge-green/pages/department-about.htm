@@ -1,0 +1,16 @@
+title = "Department About"
+url = "/dept/:perma/about"
+layout = "department"
+description = "About page for departments"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['about'] = $this['dept']->dept_detail->about;
+	$this['navtitle'] = 'About ' . strtoupper($this['dept']->short_name);
+	$this['active'] = 'about';
+}
+
+==
+
+{{ about | raw }}

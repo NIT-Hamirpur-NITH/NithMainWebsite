@@ -1,0 +1,34 @@
+title = "Department Galleries"
+url = "/dept/:perma/galleries"
+layout = "department"
+description = "Galleries of Department"
+is_hidden = 0
+==
+
+function onStart() {
+	$this['galleries'] = $this['dept']->galleries()->where('ismain', '=', 0)->paginate(9);
+	$this['navtitle'] = 'Galleries';
+	$this['active'] = 'gallery';
+}
+
+==
+
+<div class="dept-galleries">
+	<div class="row">
+	{% for gallery in galleries %}
+	
+	<a href="/dept/{{ dept.short_name }}/gallery/{{ gallery.id }}">
+		<div class="col-md-4 col-sm-6 col-xs-12">
+			<div>
+				<div><img src="{{ gallery.carousel.images[0].getThumb(300, 300) }}" alt=" gallery.carousel.name" class="img-responsive"></div>
+				<div><button class="btn btn-block btn-theme"> {{ gallery.carousel.name }} </button></div>
+			</div>
+		</div>
+	</a>
+	{% endfor %}
+	</div>
+</div>
+
+<div class="text-center">
+	{{ galleries.render() | raw }}
+</div>
